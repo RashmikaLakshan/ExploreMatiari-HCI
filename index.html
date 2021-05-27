@@ -13,6 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/language.css" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
   <title>Explore Matiari</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -70,24 +71,25 @@
     </div>
   </header>
 
-  <div class="container-fluid mt-2" style="margin-right: 2rem; margin-left:auto;">
+  <div class="container-fluid mt-2">
 
     <script id="language_script" data-languages="ur,en" data-debug="1" src="language.js"></script>
 
 
-    <language class="languageFrameSelect" data-type="select">
+    <language class="languageFrameSelect" data-type="select" aria-label="Click to select Language"
+      data-balloon-pos="down">
     </language>
   </div>
 
   <div class="container-fluid">
     <div lang="en" class="row mt-3 pl-3">
       <div class="container-fluid">
-      <h1>History of Matiari</h1>
-    </div>
+        <h1>History of Matiari</h1>
+      </div>
       <div class="container-fluid">
-      <h5>"Matiari District (Sindhi: ضِلعو مٽیاري‎) is a district in the
-        Pakistani province of Sindh. The district was created in 2005
-        out of Hyderabad District."</h5>
+        <h5>"Matiari District (Sindhi: ضِلعو مٽیاري‎) is a district in the
+          Pakistani province of Sindh. The district was created in 2005
+          out of Hyderabad District."</h5>
       </div>
     </div>
 
@@ -106,19 +108,19 @@
   <div class="container-fluid">
     <div lang="en" class="row mt-5 pl-3">
       <div class="container-fluid">
-      <h1>Etymology</h1>
-    </div>
+        <h1>Etymology</h1>
+      </div>
       <div class="container-fluid">
-      <h5>The word Matiari is derived from two Sindhi words "Mat" and
-        "yari" which means Change friendship. This is not actually we
-        mean it. Actually there is a main Bus Stop At Matiari Main Road,
-        Where a Lady has Sat there Hut a long time ago, Where She Keeps
-        a Mud Pot Of Water ( Called in Sindhi like Mat / Matko / Dilo )
-        , So People of Matiari naming of their Bus Stop, and Telling to
-        Bus Conductor (Make Stop at Old Women's Hut Where She Keeps Mud
-        Pot of Water { called in sindhi like this [ Mat Wari Maai ] }),
-        By Calling it like this (Mat Wari Maai -- Mat Wari Maai )So many
-        time, That is Why it Became Matiari.</h5>
+        <h5>The word Matiari is derived from two Sindhi words "Mat" and
+          "yari" which means Change friendship. This is not actually we
+          mean it. Actually there is a main Bus Stop At Matiari Main Road,
+          Where a Lady has Sat there Hut a long time ago, Where She Keeps
+          a Mud Pot Of Water ( Called in Sindhi like Mat / Matko / Dilo )
+          , So People of Matiari naming of their Bus Stop, and Telling to
+          Bus Conductor (Make Stop at Old Women's Hut Where She Keeps Mud
+          Pot of Water { called in sindhi like this [ Mat Wari Maai ] }),
+          By Calling it like this (Mat Wari Maai -- Mat Wari Maai )So many
+          time, That is Why it Became Matiari.</h5>
       </div>
     </div>
 
@@ -141,17 +143,27 @@
     </div>
   </div>
 
+  <div class="container-fluid my-5">
+    <div class="row">
+      <div class="col-lg-3 col-sm-3 col-md-3"></div>
+      <div class="col-lg-6 col-sm-6 col-md-6 text-center">
+        <img class="img-fluid" src="images/index/potlady.jpg">
+      </div>
+      <div class="col-lg-3 col-sm-3 col-md-3" ></div>
+    </div>
+  </div>
+
 
   <div class="container-fluid">
     <div lang="en" class="row mt-5 pl-3">
       <div class="container-fluid">
-      <h1>Demography</h1>
+        <h1>Demography</h1>
       </div>
       <div class="container-fluid">
-      <h5>The total population of district Matiari according to 2017
-        census was recorded to be 769,349. In the 1998 census, Sindhi
-        was the first language of 92% of the population in the talukas
-        of Hala and Matiari, while 3.6% had Urdu.</h5>
+        <h5>The total population of district Matiari according to 2017
+          census was recorded to be 769,349. In the 1998 census, Sindhi
+          was the first language of 92% of the population in the talukas
+          of Hala and Matiari, while 3.6% had Urdu.</h5>
       </div>
     </div>
 
@@ -168,46 +180,33 @@
     </div>
   </div>
 
-  <div class="container-fluid">
-    <div lang="en" class="row mt-5 pl-3">
-      <div class="container-fluid">
-      <h1>History and Administration</h1>
-    </div>
-      <div class="container-fluid">
-      <h5>Matiari district was carved out of then Hyderabad district in
-        2005. Matiari district is part of Hyderabad division. The
-        district is administratively subdivided into three talukas.</h5>
+  <div class="container-fluid my-5">
+    <div class="row">
+      <div class="col-lg-3 col-sm-3 col-md-3"></div>
+      <div class="col-lg-6 col-sm-6 col-md-6">
+        <img class="img-fluid" src="images/index/pop.jpg">
       </div>
-    </div>
-
-    <div lang="ur" class="row mt-5 pl-3">
-      <div class="container-fluid">
-        <h1>تاریخ اور انتظامیہ</h1>
-      </div>
-      <div class="container-fluid">
-        <h5>
-          مٹیاری ضلع اس وقت کے ضلع حیدرآباد سے بنا ہوا تھا
-          2005. مٹیاری ضلع حیدرآباد ڈویژن کا ایک حصہ ہے۔
-          ضلع انتظامی طور پر تین تعلقوں میں تقسیم ہے۔</h5>
-      </div>
+      <div class="col-lg-3 col-sm-3 col-md-3"></div>
     </div>
   </div>
 
+
+
   <div class="container-fluid">
     <div lang="en" class="row mt-5 pl-3">
       <div class="container-fluid">
-      <h1>History and Administration</h1>
-    </div>
+        <h1>History and Administration</h1>
+      </div>
       <div class="container-fluid">
-      <h5>Matiari district was carved out of then Hyderabad district in
-        2005. Matiari district is part of Hyderabad division. The
-        district is administratively subdivided into three talukas.</h5>
-      <ul class="history-list">
-        <li> <a href="https://en.wikipedia.org/wiki/Hala_Taluka" target="_blank"> Hala</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Matiari_Taluka" target="_blank"> Matiari</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Saeedabad_Taluka" target="_blank"> Saeedabad</a></li>
-      </ul>
-    </div>
+        <h5>Matiari district was carved out of then Hyderabad district in
+          2005. Matiari district is part of Hyderabad division. The
+          district is administratively subdivided into three talukas.</h5>
+        <ul class="history-list">
+          <li> <a href="https://en.wikipedia.org/wiki/Hala_Taluka" target="_blank"> Hala</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Matiari_Taluka" target="_blank"> Matiari</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Saeedabad_Taluka" target="_blank"> Saeedabad</a></li>
+        </ul>
+      </div>
     </div>
 
     <div lang="ur" class="row mt-5 pl-3">
@@ -232,11 +231,11 @@
   <div class="container-fluid">
     <div lang="en" class="row mt-5 pl-3">
       <div class="container-fluid">
-      <h1>Agriculture</h1>
-    </div>
+        <h1>Agriculture</h1>
+      </div>
       <div class="container-fluid">
-      <h5>Matiari district is one of the most fertile districts of Sindh, main crops
-        cultivated here are <strong>Cotton, Banana, Mango, wheat, onions and Sugar-cane</strong>.</h5>
+        <h5>Matiari district is one of the most fertile districts of Sindh, main crops
+          cultivated here are <strong>Cotton, Banana, Mango, wheat, onions and Sugar-cane</strong>.</h5>
       </div>
     </div>
 
@@ -254,17 +253,40 @@
     </div>
   </div>
 
+  <div class="container-fluid my-5">
+    <div class="row">
+      <div class="col-lg-3 col-sm-3 col-md-3">
+        <img class="img-fluid" src="images/index/agri1.jpg" alt="cotton">
+      </div>
+
+
+      <div class="col-lg-3 col-sm-3 col-md-3">
+        <img class="img-fluid" src="images/index/agri2.jpg" alt="sugar cane">
+      </div>
+
+
+      <div class="col-lg-3 col-sm-3 col-md-3">
+        <img class="img-fluid" src="images/index/agri3.jpg" alt="mango">
+      </div>
+
+
+      <div class="col-lg-3 col-sm-3 col-md-3">
+        <img class="img-fluid" src="images/index/agri4.jpg" alt="wheat">
+      </div>
+    </div>
+  </div>
+
 
   <div class="container-fluid">
     <div lang="en" class="row mt-5 pl-3">
       <div class="container-fluid">
-      <h1>Famous Things</h1>
-    </div>
+        <h1>Famous Things</h1>
+      </div>
       <div class="container-fluid">
-      <h5>This district is famous for its Handicrafts mainly <strong>Kaashi</strong> and
-        <strong>Ajrak</strong> produced specially in <strong>Hala</strong>.
-      </h5>
-    </div>
+        <h5>This district is famous for its Handicrafts mainly <strong>Kaashi</strong> and
+          <strong>Ajrak</strong> produced specially in <strong>Hala</strong>.
+        </h5>
+      </div>
     </div>
 
     <div lang="ur" class="row mt-5 pl-3">
@@ -287,22 +309,22 @@
   <div class="container-fluid my-5">
     <div class="row">
       <div class="col-lg-3 col-sm-3 col-md-3">
-        <img  class="img-fluid" src="images/halawork.jpg">
+        <img class="img-fluid" src="images/halawork.jpg">
       </div>
 
-      
+
       <div class="col-lg-3 col-sm-3 col-md-3">
-        <img  class="img-fluid" src="images/halawork2.jpg">
+        <img class="img-fluid" src="images/halawork2.jpg">
       </div>
 
-      
+
       <div class="col-lg-3 col-sm-3 col-md-3">
-        <img  class="img-fluid" src="images/halawork3.jpg">
+        <img class="img-fluid" src="images/halawork3.jpg">
       </div>
 
-      
+
       <div class="col-lg-3 col-sm-3 col-md-3">
-        <img  class="img-fluid" src="images/halawork4.jpg">
+        <img class="img-fluid" src="images/halawork4.jpg">
       </div>
     </div>
   </div>
