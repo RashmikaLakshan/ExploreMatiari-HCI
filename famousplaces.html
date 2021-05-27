@@ -16,28 +16,56 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Explore Matiari</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        var scroll_start = 0;
+        var startchange = $('.title');
+        var offset = startchange.offset();
+        if (startchange.length) {
+          $(document).scroll(function () {
+            scroll_start = $(this).scrollTop();
+            if (scroll_start > offset.top) {
+              $(".navbar-default").css('background-color', 'white');
+              $(".navFont").css('color', 'black');
+              
+              $(".dark-blue-text").css('color', 'black');
+              $("a.active").css('color','white');
+            } else {
+              $('.navbar-default').css('background-color', 'transparent');
+              $(".navFont").css('color', 'white');
+              $(".dark-blue-text").css('color', 'white');
+            }
+          });
+        }
+      });
+    </script>
   </head>
 
   <body>
     <!-- Header and Nav -->
     <header>
-      <nav>
-        <div class="main">
-          <ul class="main-list">
-            <li class="main-list-item"><a href="index.html">Home</a></li>
-            <li class="active main-list-item">
-              <a href="famousplaces.html">Famous Places</a>
-            </li>
-            <li class="main-list-item">
-              <a href="restaurants.html">Restaurants</a>
-            </li>
-            <li class="main-list-item"><a href="stops.html">Bus Stops</a></li>
-            <li class="main-list-item">
-              <a href="hospitals.html">Hospitals</a>
-            </li>
-          </ul>
+      <nav class="navbar fixed-top navbar-expand-md navbar-default">
+        <a href="#" class="navbar-brand"><img src="images/index/logo.png"></a>
+       
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
+            class="fas fa-bars fa-1x"></i></span></button>
+  
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
+                <a href="index.html" class="nav-item nav-link navFont">Home</a>
+                <a href="famousplaces.html" class="nav-item active nav-link navFont">Profile</a>
+                <a href="restaurants.html" class="nav-item nav-link navFont">Restaurants</a>
+                <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
+                <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
+            </div>
         </div>
-      </nav>
+    </nav>
       <!-- // Header and Nav -->
 
       <!-- Title heading -->
@@ -371,6 +399,16 @@
       </div>
     </footer>
     <!-- // Footer -->
+    
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
   </body>
 </html>
 
