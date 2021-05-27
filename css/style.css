@@ -301,3 +301,11 @@ a.active {
   background-color: #fff !important;
   transition: background-color 200ms linear;
 }
+
+.icon-color{
+  color: #686868;
+}
+
+.icon-color:hover{
+  color: red;
+}
