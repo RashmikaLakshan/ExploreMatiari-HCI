@@ -121,7 +121,8 @@ a.active {
 
 /* HISTORY */
 .history {
-  margin: 20px;
+  /* margin: 20px; */
+  padding-top: 20px;
 }
 
 .history-para {
@@ -296,6 +297,40 @@ a.active {
   color: #a2c376;
 }
 
+.zoom {
+  transition: transform .5s;
+}
+
+.zoom:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05); 
+}
+
+.btn-checkout{
+  background-color: #6e0101;
+  color: white;
+}
+
+.btn-checkout:hover{
+  background-color: rgb(235, 235, 235);
+  color: #6e0101;
+}
+
+.card-title{
+  font-size: large;
+  color: #6e0101;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.card-text{
+  font-size: small;
+  color: #6e0101;
+  font-weight: 400;
+  text-transform: capitalize;
+}
 
 .navbarcustomize {
   background-color: #fff !important;
