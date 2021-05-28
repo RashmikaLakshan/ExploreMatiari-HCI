@@ -361,6 +361,7 @@ input, button{
     padding: 0;
     margin: 0;
     border: 0;
+    border-color: transparent;
     background-color: transparent;
 }
 
@@ -372,10 +373,10 @@ input, button{
     width: 80%;
     padding: 0px 35px;
     margin: 0px auto;
-    background-color: #ff7575;
+    background-color: #6e0101;
     border-radius: 20px;
-    box-shadow: 0 10px 40px #646464, 0 0 0 20px #ffffffeb;
-    transform: scale(0.6);
+    box-shadow: 0 10px 10px #646464, 0 0 0 10px #ffffffeb;
+    transform: scale(0.4);
 }
 
 @media screen and (max-width: 768px) {
@@ -393,7 +394,11 @@ input[type="text"]{
 }
 
 input[type="text"]::placeholder{
-    color: #e16868;
+    color: white;
+}
+
+input:hover {
+  border-color: transparent;
 }
 
 #s-cover{
@@ -444,9 +449,13 @@ button span:before, button span:after{
     width: 45px;
     height: 15px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 0px;
     transform: rotateZ(0);
     transition: 0.5s ease all;
+}
+
+#myInput {
+  border-color: transparent;
 }
 
 #s-cover:hover #s-circle{
@@ -486,4 +495,31 @@ button span:before, button span:after{
 @font-face {
   font-family: serifFont;
   src: url('../fonts/NotoSerif-Regular.ttf');
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+  font-size: 1px;
+  border: none;
+  outline: none;
+  background-color: #6e0101;
+  color: white;
+  cursor: pointer;
+  padding: 1px;
+  border-radius: 60%;
+}
+
+.arrow {
+  z-index: 100;
+  color: white;
+}
+
+#myBtn:hover {
+  background-color: #555;
 }
