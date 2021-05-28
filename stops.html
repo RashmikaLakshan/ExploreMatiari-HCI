@@ -1,189 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <title>Explore Matiari</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <title>Explore Matiari</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script>
-      $(document).ready(function () {
-        var scroll_start = 0;
-        var startchange = $('.title');
-        var offset = startchange.offset();
-        if (startchange.length) {
-          $(document).scroll(function () {
-            scroll_start = $(this).scrollTop();
-            if (scroll_start > offset.top) {
-              $(".navbar-default").css('background-color', 'white');
-              $(".navFont").css('color', 'black');
-              
-              $(".dark-blue-text").css('color', 'black');
-              $("a.active").css('color','white');
-            } else {
-              $('.navbar-default').css('background-color', 'transparent');
-              $(".navFont").css('color', 'white');
-              $(".dark-blue-text").css('color', 'white');
-            }
-          });
-        }
-      });
-    </script>
-  </head>
+  <script>
+    $(document).ready(function () {
+      var scroll_start = 0;
+      var startchange = $('.title');
+      var offset = startchange.offset();
+      if (startchange.length) {
+        $(document).scroll(function () {
+          scroll_start = $(this).scrollTop();
+          if (scroll_start > offset.top) {
+            $(".navbar-default").css('background-color', 'white');
+            $(".navFont").css('color', 'black');
 
-  <body>
-    <!-- Header and Nav -->
-    <header>
-      <nav class="navbar fixed-top navbar-expand-md navbar-default">
-        <a href="#" class="navbar-brand"><img src="images/index/logo.png"></a>
-       
-        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
-            class="fas fa-bars fa-1x"></i></span></button>
-  
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
-                <a href="index.html" class="nav-item nav-link navFont">Home</a>
-                <a href="famousplaces.html" class="nav-item nav-link navFont">Profile</a>
-                <a href="restaurants.html" class="nav-item nav-link navFont">Restaurants</a>
-                <a href="stops.html" class="nav-item active nav-link navFont">Bus Stops</a>
-                <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
-            </div>
+            $(".dark-blue-text").css('color', 'black');
+            $("a.active").css('color', 'white');
+          } else {
+            $('.navbar-default').css('background-color', 'transparent');
+            $(".navFont").css('color', 'white');
+            $(".dark-blue-text").css('color', 'white');
+          }
+        });
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Header and Nav -->
+  <header>
+    <nav class="navbar fixed-top navbar-expand-md navbar-default">
+      <a href="/index.html" class="navbar-brand"><img src="images/index/logo.png"></a>
+
+      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars fa-1x dark-blue-text"></i></button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
+          <a href="index.html" class="nav-item nav-link navFont">Home</a>
+          <a href="famousplaces.html" class="nav-item nav-link navFont">Famous Places</a>
+          <a href="restaurants.html" class="nav-item nav-link navFont">Restaurants</a>
+          <a href="stops.html" class="nav-item active nav-link navFont">Bus Stops</a>
+          <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
         </div>
-    </nav>
-      <!-- // Header and Nav -->
-      <!-- // Header and Nav -->
-
-      <!-- Title heading -->
-      <div class="title">
-        <span class="heading">Bus Stops</span>
       </div>
-    </header>
-    <!-- // Title heading -->
+    </nav>
+    <!-- // Header and Nav -->
+    <!-- // Header and Nav -->
 
-    <!-- Restaurants -->
-    <div class="page-wrapper">
-      <main>
-        <div class="history">
-          <h1 class="history-heading1">
-            Bus Stops in Matiari (Click to view their locations)
-          </h1>
-          <hr />
-          <!-- Restaurants list -->
-
-          <ul class="history-list restaurants">
-            <li>
-              <a
-                class="stops-link"
-                href="https://www.google.com/search?q=bus%20stops%20in%20matiari&oq=bus+stops+in+matiari&aqs=chrome..69i57j33.8162j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk024eSlnOjncht4O56_5K2fIE0rHpg:1592804519159&npsic=0&rflfq=1&rlha=0&rllag=25733830,68486745,5915&tbm=lcl&rldimm=783581207097631425&lqi=ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp&ved=2ahUKEwjSlr6c25TqAhVqx4UKHWSxAMwQvS4wAHoECAsQJw&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:783581207097631425,l,ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp;mv:[[25.806526299999998,68.6121953],[25.394337999999998,68.25568729999999]]"
-                target="_blank"
-              >
-                Tando Adam Bus Stop
-              </a>
-            </li>
-            <li>
-              <a
-                class="stops-link"
-                href="https://www.google.com/search?q=bus%20stops%20in%20matiari&oq=bus+stops+in+matiari&aqs=chrome..69i57j33.8162j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk024eSlnOjncht4O56_5K2fIE0rHpg:1592804519159&npsic=0&rflfq=1&rlha=0&rllag=25733830,68486745,5915&tbm=lcl&rldimm=783581207097631425&lqi=ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp&ved=2ahUKEwjSlr6c25TqAhVqx4UKHWSxAMwQvS4wAHoECAsQJw&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:13434370058263225490;mv:[[25.806526299999998,68.6121953],[25.394337999999998,68.25568729999999]]"
-                target="_blank"
-              >
-                Tando Adam Second Bus Stop
-              </a>
-            </li>
-            <li>
-              <a
-                class="stops-link"
-                href="https://www.google.com/search?q=bus%20stops%20in%20matiari&oq=bus+stops+in+matiari&aqs=chrome..69i57j33.8162j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk024eSlnOjncht4O56_5K2fIE0rHpg:1592804519159&npsic=0&rflfq=1&rlha=0&rllag=25733830,68486745,5915&tbm=lcl&rldimm=783581207097631425&lqi=ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp&ved=2ahUKEwjSlr6c25TqAhVqx4UKHWSxAMwQvS4wAHoECAsQJw&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:15515924709866952542,l,ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp;mv:[[25.806526299999998,68.6121953],[25.394337999999998,68.25568729999999]]"
-                target="_blank"
-              >
-                Bhit Shah Morrey Bus Stop
-              </a>
-            </li>
-            <li>
-              <a
-                class="stops-link"
-                href="https://www.google.com/search?q=bus%20stops%20in%20matiari&oq=bus+stops+in+matiari&aqs=chrome..69i57j33.8162j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk024eSlnOjncht4O56_5K2fIE0rHpg:1592804519159&npsic=0&rflfq=1&rlha=0&rllag=25733830,68486745,5915&tbm=lcl&rldimm=783581207097631425&lqi=ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp&ved=2ahUKEwjSlr6c25TqAhVqx4UKHWSxAMwQvS4wAHoECAsQJw&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:2161622244186201158;mv:[[25.806526299999998,68.6121953],[25.394337999999998,68.25568729999999]]"
-                target="_blank"
-              >
-                UC Mitho Khoso Bus Stop
-              </a>
-            </li>
-          </ul>
-
-          <!-- // Restaurants list -->
-        </div>
-      </main>
+    <!-- Title heading -->
+    <div class="title">
+      <span class="heading">Bus Stops</span>
     </div>
-    <!-- // Restaurants -->
+  </header>
+  <!-- // Title heading -->
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer">
-        <div class="footer-content">
-          <div class="footer-section about">
-            <h1 class="logo-text">
-              <span class="logo-span">J</span>unaid
-              <span class="logo-span">Q</span>ureshi
-            </h1>
-            <p class="footer-para">
-              I am a creative, Web Developer with command on Latest Tech stacks
-            </p>
-            <div class="contact">
-              <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
-              <span
-                ><i class="fas fa-envelope"></i>&nbsp;
-                qjunaid623@gmail.com</span
-              >
-            </div>
-            <div class="socials">
-              <a
-                href="https://www.facebook.com/profile.php?id=100041078220896"
-                target="_blank"
-                ><i class="fab fa-facebook"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/junaid-qureshi-34a180194/"
-                target="_blank"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a href="https://twitter.com/Junaid084869/" target="_blank"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="https://github.com/qjunaid623/" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
+  <!-- Restaurants -->
+  <div class="page-wrapper">
+    <main>
+      <div class="history">
+        <h1 class="history-heading1">
+          Bus Stops in Matiari (Click to view their locations)
+        </h1>
+        <hr />
+        <!-- Restaurants list -->
+
+        <ul class="history-list restaurants">
+          <li>
+            <a class="stops-link"
+              href="https://www.google.com/search?q=bus%20stops%20in%20matiari&oq=bus+stops+in+matiari&aqs=chrome..69i57j33.8162j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk024eSlnOjncht4O56_5K2fIE0rHpg:1592804519159&npsic=0&rflfq=1&rlha=0&rllag=25733830,68486745,5915&tbm=lcl&rldimm=783581207097631425&lqi=ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp&ved=2ahUKEwjSlr6c25TqAhVqx4UKHWSxAMwQvS4wAHoECAsQJw&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:783581207097631425,l,ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp;mv:[[25.806526299999998,68.6121953],[25.394337999999998,68.25568729999999]]"
+              target="_blank">
+              Tando Adam Bus Stop
+            </a>
+          </li>
+          <li>
+            <a class="stops-link"
+              href="https://www.google.com/search?q=bus%20stops%20in%20matiari&oq=bus+stops+in+matiari&aqs=chrome..69i57j33.8162j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk024eSlnOjncht4O56_5K2fIE0rHpg:1592804519159&npsic=0&rflfq=1&rlha=0&rllag=25733830,68486745,5915&tbm=lcl&rldimm=783581207097631425&lqi=ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp&ved=2ahUKEwjSlr6c25TqAhVqx4UKHWSxAMwQvS4wAHoECAsQJw&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:13434370058263225490;mv:[[25.806526299999998,68.6121953],[25.394337999999998,68.25568729999999]]"
+              target="_blank">
+              Tando Adam Second Bus Stop
+            </a>
+          </li>
+          <li>
+            <a class="stops-link"
+              href="https://www.google.com/search?q=bus%20stops%20in%20matiari&oq=bus+stops+in+matiari&aqs=chrome..69i57j33.8162j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk024eSlnOjncht4O56_5K2fIE0rHpg:1592804519159&npsic=0&rflfq=1&rlha=0&rllag=25733830,68486745,5915&tbm=lcl&rldimm=783581207097631425&lqi=ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp&ved=2ahUKEwjSlr6c25TqAhVqx4UKHWSxAMwQvS4wAHoECAsQJw&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:15515924709866952542,l,ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp;mv:[[25.806526299999998,68.6121953],[25.394337999999998,68.25568729999999]]"
+              target="_blank">
+              Bhit Shah Morrey Bus Stop
+            </a>
+          </li>
+          <li>
+            <a class="stops-link"
+              href="https://www.google.com/search?q=bus%20stops%20in%20matiari&oq=bus+stops+in+matiari&aqs=chrome..69i57j33.8162j0j7&sourceid=chrome&ie=UTF-8&sxsrf=ALeKk024eSlnOjncht4O56_5K2fIE0rHpg:1592804519159&npsic=0&rflfq=1&rlha=0&rllag=25733830,68486745,5915&tbm=lcl&rldimm=783581207097631425&lqi=ChRidXMgc3RvcHMgaW4gbWF0aWFyaVohCglidXMgc3RvcHMiFGJ1cyBzdG9wcyBpbiBtYXRpYXJp&ved=2ahUKEwjSlr6c25TqAhVqx4UKHWSxAMwQvS4wAHoECAsQJw&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:2161622244186201158;mv:[[25.806526299999998,68.6121953],[25.394337999999998,68.25568729999999]]"
+              target="_blank">
+              UC Mitho Khoso Bus Stop
+            </a>
+          </li>
+        </ul>
+
+        <!-- // Restaurants list -->
+      </div>
+    </main>
+  </div>
+  <!-- // Restaurants -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h1 class="logo-text">
+            <span class="logo-span">J</span>unaid
+            <span class="logo-span">Q</span>ureshi
+          </h1>
+          <p class="footer-para">
+            I am a creative, Web Developer with command on Latest Tech stacks
+          </p>
+          <div class="contact">
+            <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
+            <span><i class="fas fa-envelope"></i>&nbsp;
+              qjunaid623@gmail.com</span>
+          </div>
+          <div class="socials">
+            <a href="https://www.facebook.com/profile.php?id=100041078220896" target="_blank"><i
+                class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/junaid-qureshi-34a180194/" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/Junaid084869/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/qjunaid623/" target="_blank"><i class="fab fa-github"></i></a>
           </div>
         </div>
-        <div class="footer-bottom">
-          &copy; | Designed By Junaid Qureshi
-        </div>
       </div>
-    </footer>
-    <!-- // Footer -->
-    
+      <div class="footer-bottom">
+        &copy; | Designed By Junaid Qureshi
+      </div>
+    </div>
+  </footer>
+  <!-- // Footer -->
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-  crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-  crossorigin="anonymous"></script>
-  </body>
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
