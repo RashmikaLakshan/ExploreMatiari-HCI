@@ -1,90 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <title>Explore Matiari</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <title>Explore Matiari</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+  <script>
+    $(document).ready(function () {
+      var scroll_start = 0;
+      var startchange = $('.title');
+      var offset = startchange.offset();
+      if (startchange.length) {
+        $(document).scroll(function () {
+          scroll_start = $(this).scrollTop();
+          if (scroll_start > offset.top) {
+            $(".navbar-default").css('background-color', 'white');
+            $(".navFont").css('color', 'black');
+            $(".dark-blue-text").css('color', 'black');
+            $("a.active").css('color', 'white');
+          } else {
+            $('.navbar-default').css('background-color', 'transparent');
+            $(".navFont").css('color', 'white');
+            $(".dark-blue-text").css('color', 'white');
+          }
+        });
+      }
+    });
+  </script>
+</head>
 
-    <script>
-      $(document).ready(function () {
-        var scroll_start = 0;
-        var startchange = $('.title');
-        var offset = startchange.offset();
-        if (startchange.length) {
-          $(document).scroll(function () {
-            scroll_start = $(this).scrollTop();
-            if (scroll_start > offset.top) {
-              $(".navbar-default").css('background-color', 'white');
-              $(".navFont").css('color', 'black');
-              
-              $(".dark-blue-text").css('color', 'black');
-              $("a.active").css('color','white');
-            } else {
-              $('.navbar-default').css('background-color', 'transparent');
-              $(".navFont").css('color', 'white');
-              $(".dark-blue-text").css('color', 'white');
-            }
-          });
-        }
-      });
-    </script>
-  </head>
+<body>
+  <!-- Header and Nav -->
+  <header>
+    <nav class="navbar fixed-top navbar-expand-md navbar-default">
+      <a href="#" class="navbar-brand"><img src="images/index/logo.png"></a>
 
-  <body>
-    <!-- Header and Nav -->
-    <header>
-      <nav class="navbar fixed-top navbar-expand-md navbar-default">
-        <a href="#" class="navbar-brand"><img src="images/index/logo.png"></a>
-       
-        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
-            class="fas fa-bars fa-1x"></i></span></button>
-  
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
-                <a href="index.html" class="nav-item nav-link navFont">Home</a>
-                <a href="famousplaces.html" class="nav-item nav-link navFont">Profile</a>
-                <a href="restaurants.html" class="nav-item active nav-link navFont">Restaurants</a>
-                <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
-                <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
-            </div>
+      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
+          <a href="index.html" class="nav-item nav-link navFont">Home</a>
+          <a href="famousplaces.html" class="nav-item nav-link navFont">Famous Places</a>
+          <a href="restaurants.html" class="nav-item active nav-link navFont">Restaurants</a>
+          <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
+          <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
         </div>
-    </nav>
-      <!-- // Header and Nav -->
-
-      <!-- Title heading -->
-      <div class="title">
-        <span class="heading">Restaurants</span>
       </div>
-    </header>
-    <!-- // Title heading -->
+    </nav>
+    <!-- // Header and Nav -->
 
-    <!-- Restaurants -->
-    <div class="page-wrapper">
-      <main>
-        <div class="history">
-          <h1 class="history-heading1">
-            Restaurants in Matiari (Click to view their locations)
-          </h1>
-          <hr />
-          <!-- Restaurants list -->
+    <!-- Title heading -->
+    <div class="title">
+      <span class="heading">Restaurants</span>
+    </div>
+  </header>
+  <!-- // Title heading -->
 
-          <ul class="history-list restaurants">
+  <!-- Restaurants -->
+  <div class="page-wrapper">
+    <div class="history d-flex justify-content-center">
+      <h1 class="history-heading1 text-center">Restaurants in Matiari</h1>
+      <hr />
+    </div>
+    <!-- Restaurants list -->
+
+    <!-- <ul class="history-list restaurants">
             <li>
               <a
                 class="restaurants-link"
@@ -328,68 +320,314 @@
                 Dera Restaurant
               </a>
             </li>
-          </ul>
+          </ul> -->
 
-          <!-- // Restaurants list -->
-        </div>
-      </main>
+    <!-- // Restaurants list -->
+    <div class="container">
+      <div class="row justify-content-center d-flex" id="gallery"></div>
     </div>
-    <!-- // Restaurants -->
+    <div id="map" style="width: 100%; height: 530px;"></div>
+  </div>
+  <!-- // Restaurants -->
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer">
-        <div class="footer-content">
-          <div class="footer-section about">
-            <h1 class="logo-text">
-              <span class="logo-span">J</span>unaid
-              <span class="logo-span">Q</span>ureshi
-            </h1>
-            <p class="footer-para">
-              I am a creative, Web Developer with command on Latest Tech stacks
-            </p>
-            <div class="contact">
-              <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
-              <span
-                ><i class="fas fa-envelope"></i>&nbsp;
-                qjunaid623@gmail.com</span
-              >
-            </div>
-            <div class="socials">
-              <a
-                href="https://www.facebook.com/profile.php?id=100041078220896"
-                target="_blank"
-                ><i class="fab fa-facebook"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/junaid-qureshi-34a180194/"
-                target="_blank"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a href="https://twitter.com/Junaid084869/" target="_blank"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="https://github.com/qjunaid623/" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h1 class="logo-text">
+            <span class="logo-span">J</span>unaid
+            <span class="logo-span">Q</span>ureshi
+          </h1>
+          <p class="footer-para">
+            I am a creative, Web Developer with command on Latest Tech stacks
+          </p>
+          <div class="contact">
+            <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
+            <span><i class="fas fa-envelope"></i>&nbsp;
+              qjunaid623@gmail.com</span>
+          </div>
+          <div class="socials">
+            <a href="https://www.facebook.com/profile.php?id=100041078220896" target="_blank"><i
+                class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/junaid-qureshi-34a180194/" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/Junaid084869/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/qjunaid623/" target="_blank"><i class="fab fa-github"></i></a>
           </div>
         </div>
-        <div class="footer-bottom">
-          &copy; | Designed By Junaid Qureshi
-        </div>
       </div>
-    </footer>
-    <!-- // Footer -->
-    
+      <div class="footer-bottom">
+        &copy; | Designed By Junaid Qureshi
+      </div>
+    </div>
+  </footer>
+  <!-- // Footer -->
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-  crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-  crossorigin="anonymous"></script>
-  </body>
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCHW4wvgtSVytLuG9U04dVG8sdgov-EsQ&callback=myMap"></script>
+  <script src="js/map.js"></script>
+</body>
+
 </html>
+
+<script src="js/map.js"></script>
+<script>
+  var data = [
+    {
+      "image": "images/Restaurents/res1.jpg",
+      "title": "Super Madina Restaurant and BBQ",
+      "description": "",
+      "lat": "25.558598",
+      "lng": "68.4357838"
+    },
+    {
+      "image": "images/Restaurents/res2.jpg",
+      "title": "Cafe Piyala",
+      "description": "",
+      "lat": "20.8743151",
+      "lng": "66.8656254"
+    },
+    {
+      "image": "images/Restaurents/res3.jpg",
+      "title": "Al Tariq Restaurant & Amir Hamza Masjid",
+      "description": "",
+      "lat": "15.6330373",
+      "lng": "65.3136942"
+    },
+    {
+      "image": "images/Restaurents/res4.jpg",
+      "title": "SSD Fast Food",
+      "description": "",
+      "lat": "28.1788302",
+      "lng": "64.9338475"
+    },
+    {
+      "image": "images/Restaurents/res5.jpg",
+      "title": "Grand Naseem Dubai Hotel",
+      "description": "",
+      "lat": "25.5610558",
+      "lng": "68.436048"
+    },
+
+    {
+      "image": "images/Restaurents/res6.jpg",
+      "title": "Jugnoo Hotel & BBQ",
+      "description": "",
+      "lat": "15.6514588",
+      "lng": "65.3155918"
+    },
+
+    {
+      "image": "images/Restaurents/res7.jpg",
+      "title": "Manzoor Hotel",
+      "description": "",
+      "lat": "15.6988839",
+      "lng": "65.3755577"
+    },
+    {
+      "image": "images/Restaurents/res8.jpg",
+      "title": "Cafe Sukoon Restaurant",
+      "description": "",
+      "lat": "15.7462023",
+      "lng": "65.3236883"
+    },
+
+    {
+      "image": "images/Restaurents/res9.jpg",
+      "title": "Bismillah Restaurant",
+      "description": "",
+      "lat": "15.726921",
+      "lng": "65.3463459"
+    },
+    {
+      "image": "images/Restaurents/res10.jpg",
+      "title": "Super Madina Hotel",
+      "description": "",
+      "lat": "15.7612164",
+      "lng": "65.3092249"
+    },
+
+    {
+      "image": "images/Restaurents/res11.jpg",
+      "title": "Bhittai Restaurant",
+      "description": "",
+      "lat": "15.7502119",
+      "lng": "65.3377906"
+    },
+
+    {
+      "image": "images/Restaurents/res12.png",
+      "title": "Sarwari Chicken Biryani",
+      "description": "",
+      "lat": "15.7560586",
+      "lng": "65.3042977"
+    },
+    {
+      "image": "images/Restaurents/res13.png",
+      "title": "Sindhu Restaurant",
+      "description": "",
+      "lat": "15.7860035",
+      "lng": "65.2981411"
+    },
+    {
+      "image": "images/Restaurents/res14.jpg",
+      "title": "Al-Noorani Student Biryani",
+      "description": "",
+      "lat": "15.7571574",
+      "lng": "65.3099936"
+    },
+    {
+      "image": "images/Restaurents/res15.jpg",
+      "title": "HALAiN Hotel",
+      "description": "",
+      "lat": "15.7592549",
+      "lng": "65.3096853"
+    },
+    {
+      "image": "images/Restaurents/res16.jpg",
+      "title": "Makhdoom Restaurant",
+      "description": "",
+      "lat": "15.7557773",
+      "lng": "65.3120233"
+    },
+    {
+      "image": "images/Restaurents/res17.jpg",
+      "title": "SindhYaaR FastFood",
+      "description": "",
+      "lat": "15.7547869",
+      "lng": "65.3040116"
+    },
+    {
+      "image": "images/Restaurents/res18.jpg",
+      "title": "New Dera Mianwali Super Star Hotel",
+      "description": "",
+      "lat": "15.7020309",
+      "lng": "65.3494488"
+    },
+    {
+      "image": "images/Restaurents/res19.jpg",
+      "title": "CHACHAR RESTUARANT",
+      "description": "",
+      "lat": "15.7461315",
+      "lng": "65.3236608"
+    },
+    {
+      "image": "images/Restaurents/res20.jpg",
+      "title": "New Quetta Hotel Hala",
+      "description": "",
+      "lat": "15.7457525",
+      "lng": "65.3241177"
+    },
+    {
+      "image": "images/Restaurents/res21.png",
+      "title": "Haji Mehar Restaurant",
+      "description": "",
+      "lat": "15.7519989",
+      "lng": "65.3404194"
+    },
+    {
+      "image": "images/Restaurents/res22.jpg",
+      "title": "Breeze Fish Point",
+      "description": "",
+      "lat": "15.5627078",
+      "lng": "65.2843116"
+    },
+    {
+      "image": "images/Restaurents/res23.jpg",
+      "title": "Mehran Restaurant",
+      "description": "",
+      "lat": "15.5805182",
+      "lng": "65.2309915"
+    },
+    {
+      "image": "images/Restaurents/res24.jpg",
+      "title": "SAF Fast Food",
+      "description": "",
+      "lat": "20.9136524",
+      "lng": "66.9045007"
+    },
+    {
+      "image": "images/Restaurents/res25.jpg",
+      "title": "K.K Fast Food Hala",
+      "description": "",
+      "lat": "15.7573081",
+      "lng": "65.3112025"
+    },
+    {
+      "image": "images/Restaurents/res26.jpg",
+      "title": "Taj Restaurant",
+      "description": "",
+      "lat": "15.5806323",
+      "lng": "65.2884423"
+    },
+    {
+      "image": "images/Restaurents/res27.jpg",
+      "title": "Dera Restaurant",
+      "description": "",
+      "lat": "15.5611522",
+      "lng": "65.2827984"
+    }
+  ]
+
+  var html = '<div class="card m-3 zoom" style="width: 18rem;">';
+  html += '<div class="card-head"></div>';
+  html += '<div class="card-body d-flex flex-column">';
+  html += '<h5 class="card-title"></h5>';
+  html += '<p class="card-text"></p>';
+  // html += '<div id="moreButton" class="card-button"></div>';
+  html += '<a id="btnclick" onclick="#" class="btn btn-checkout mt-auto text-center card-btn">Check Out</a>';
+  html += '</div>';
+  html += '</div>';
+
+  // for (var i = 0; i < data.length; i++) {
+  //   $('#gallery').append(html);
+
+  //   uimg = data[i].image;
+
+  //   var $img = $("<img/>");
+  //   $img.width('286px');
+  //   $img.height('220px');
+  //   $img.attr("src", uimg);
+  //   $(".card-head:eq(" + i + ")").append($img);
+  //   $(".card-title:eq(" + i + ")").text(data[i].title);
+  //   $(".card-text:eq(" + i + ")").text(data[i].description);
+  //   $(".btn:eq(" + i + ")").attr("href", data[i].link);
+
+
+
+  // }
+  function onClicks(index) {
+    window.scroll({
+      top: 5000,
+      left: 0,
+      behavior: 'smooth'
+    });
+    clickLocation(parseFloat(data[index].lat), parseFloat(data[index].lng));
+  }
+
+  var cards = "";
+  for (var i = 0; i < data.length; i++) {
+    cards += `<div class="card m-3 zoom" style="width: 18rem;">
+                  <div class="card-head">
+                    <img src="${data[i].image}" style="height:220px;width:286px"></img>
+                  </div>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${data[i].title}</h5>
+                    <p class="card-text">${data[i].description}</p>
+                    <button id="btnclick" onclick="onClicks(${i});" class="btn btn-checkout mt-auto text-center card-btn">Check Out</button>
+                  </div>
+                </div>`;
+  }
+
+  $('#gallery').html(cards);
+</script>
