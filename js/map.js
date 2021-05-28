@@ -17,6 +17,7 @@ window.onload = function () {
     //     icon: L.mapquest.icons.marker(),
     //     draggable: false
     // }).bindPopup('Matiari').addTo(map);
+    //dewuife hfeu wfu
 }
 
 function clickLocation(lat, lng) {
