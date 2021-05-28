@@ -487,3 +487,12 @@ a.active {
   font-family: serifFont;
   src: url('../fonts/NotoSerif-Regular.ttf');
 }
+
+
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  z-index: 99;
+}
