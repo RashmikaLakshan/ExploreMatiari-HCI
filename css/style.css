@@ -75,13 +75,13 @@ header {
 }
 
 .nav-item:hover {
-  background-color: rgb(89, 73, 46);
+  background-color: #6e0101;
   color: white;
 }
 
 
 a.active {
-  background-color: rgb(89, 73, 46);
+  background-color: #6e0101;
   color: white;
 }
 
@@ -342,5 +342,10 @@ a.active {
 }
 
 .icon-color:hover{
-  color: red;
+  color: #6e0101;
+}
+
+@font-face {
+  font-family: serifFont;
+  src: url('../fonts/NotoSerif-Regular.ttf');
 }

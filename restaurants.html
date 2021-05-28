@@ -19,6 +19,7 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
     <script>
       $(document).ready(function () {
@@ -31,7 +32,6 @@
             if (scroll_start > offset.top) {
               $(".navbar-default").css('background-color', 'white');
               $(".navFont").css('color', 'black');
-              
               $(".dark-blue-text").css('color', 'black');
               $("a.active").css('color','white');
             } else {
@@ -58,7 +58,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
                 <a href="index.html" class="nav-item nav-link navFont">Home</a>
-                <a href="famousplaces.html" class="nav-item nav-link navFont">Profile</a>
+                <a href="famousplaces.html" class="nav-item nav-link navFont">Famous Places</a>
                 <a href="restaurants.html" class="nav-item active nav-link navFont">Restaurants</a>
                 <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
                 <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
