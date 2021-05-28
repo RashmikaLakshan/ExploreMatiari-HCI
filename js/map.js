@@ -13,10 +13,10 @@ window.onload = function () {
     navigationControl = L.mapquest.navigationControl();
     map.addControl(navigationControl);
     console.log(navigationControl);
-    L.marker([39.7392, -104.9903], {
-        icon: L.mapquest.icons.marker(),
-        draggable: false
-    }).bindPopup('Matiari').addTo(map);
+    // L.marker([39.7392, -104.9903], {
+    //     icon: L.mapquest.icons.marker(),
+    //     draggable: false
+    // }).bindPopup('Matiari').addTo(map);
 }
 
 function clickLocation(lat, lng) {
