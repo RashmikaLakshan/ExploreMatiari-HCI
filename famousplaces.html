@@ -20,6 +20,10 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
 
     <script>
       $(document).ready(function () {
@@ -349,7 +353,7 @@
       <div class="container">
         <div class="row justify-content-center d-flex" id="gallery" ></div>
       </div>
-      
+      <div id="map" style="width: 100%; height: 530px;"></div>
 
     </div>
     <!-- // PAGE WRAPPER-->
@@ -416,6 +420,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/map.js"></script>
 <script>
   var data = [
     {
@@ -509,22 +514,51 @@
   html += '<div class="card-body d-flex flex-column">';
   html += '<h5 class="card-title"></h5>';
   html += '<p class="card-text"></p>';
-  html += '<a href="#" class="btn btn-checkout mt-auto text-center card-btn">Check Out</a>';
+  // html += '<div id="moreButton" class="card-button"></div>';
+  html += '<a id="btnclick" onclick="#" class="btn btn-checkout mt-auto text-center card-btn">Check Out</a>';
   html += '</div>';
   html += '</div>';
 
-  for (var i = 0; i < data.length; i++) {
-    $('#gallery').append(html);
+    // for (var i = 0; i < data.length; i++) {
+    //   $('#gallery').append(html);
+      
+    //   uimg = data[i].image;
 
-    uimg = data[i].image;
+    //   var $img = $("<img/>");
+    //   $img.width('286px');
+    //   $img.height('220px');
+    //   $img.attr("src", uimg);
+    //   $(".card-head:eq(" + i + ")").append($img);
+    //   $(".card-title:eq(" + i + ")").text(data[i].title);
+    //   $(".card-text:eq(" + i + ")").text(data[i].description);
+    //   $(".btn:eq(" + i + ")").attr("href", data[i].link);
 
-    var $img = $("<img/>");
-    $img.width('286px');
-    $img.height('220px');
-    $img.attr("src", uimg);
-    $(".card-head:eq("+i+")").append($img);
-    $(".card-title:eq("+i+")").text(data[i].title);
-    $(".card-text:eq("+i+")").text(data[i].description);
-    $(".btn:eq("+i+")").attr("href",data[i].link);
-  }
+
+
+    // }
+    function onClicks(index) {
+        window.scroll({
+          top: 5000,
+          left: 0,
+          behavior: 'smooth'
+        });
+        clickLocation(25.5922273, 68.4424681);
+      }
+
+    var cards = "";
+    for (var i = 0; i < data.length; i++) {
+      cards += `<div class="card m-3 zoom" style="width: 18rem;">
+                  <div class="card-head">
+                    <img src="${data[i].image}" style="height:220px;width:286px"></img>
+                  </div>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${data[i].title}</h5>
+                    <p class="card-text">${data[i].description}</p>
+                    <button id="btnclick" onclick="onClicks(${i});" class="btn btn-checkout mt-auto text-center card-btn">Check Out</button>
+                  </div>
+                </div>`;
+    }
+
+    $('#gallery').html(cards);
+
 </script>
