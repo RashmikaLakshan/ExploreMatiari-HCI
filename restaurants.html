@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
     <script>
       $(document).ready(function () {
         var scroll_start = 0;
@@ -335,6 +335,9 @@
       </main>
     </div>
     <!-- // Restaurants -->
+    <button onclick="clickLocation(25.5922273, 68.4424681);">map </button>
+
+    <div id="map" style="width: 100%; height: 530px;"></div>
 
     <!-- Footer -->
     <footer>
@@ -391,5 +394,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
   crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCHW4wvgtSVytLuG9U04dVG8sdgov-EsQ&callback=myMap"></script>
+  <script src="js/map.js"></script>
   </body>
 </html>
