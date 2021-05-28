@@ -497,6 +497,16 @@ a.active {
   src: url('../fonts/NotoSerif-Regular.ttf');
 }
 
+
+
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  z-index: 99;
+}
+
 #myBtn {
   display: none;
   position: fixed;
@@ -523,3 +533,4 @@ a.active {
 #myBtn:hover {
   background-color: #555;
 }
+
