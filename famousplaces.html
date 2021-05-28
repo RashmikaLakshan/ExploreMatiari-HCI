@@ -1,252 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Explore Matiari</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Explore Matiari</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
 
 
-    <script>
-      $(document).ready(function () {
-        var scroll_start = 0;
-        var startchange = $('.title');
-        var offset = startchange.offset();
-        if (startchange.length) {
-          $(document).scroll(function () {
-            scroll_start = $(this).scrollTop();
-            if (scroll_start > offset.top) {
-              $(".navbar-default").css('background-color', 'white');
-              $(".navFont").css('color', 'black');
-              
-              $(".dark-blue-text").css('color', 'black');
-              $("a.active").css('color','white');
-            } else {
-              $('.navbar-default').css('background-color', 'transparent');
-              $(".navFont").css('color', 'white');
-              $(".dark-blue-text").css('color', 'white');
-            }
-          });
-        }
-      });
-    </script>
-  </head>
+  <script>
+    $(document).ready(function () {
+      var scroll_start = 0;
+      var startchange = $('.title');
+      var offset = startchange.offset();
+      if (startchange.length) {
+        $(document).scroll(function () {
+          scroll_start = $(this).scrollTop();
+          if (scroll_start > offset.top) {
+            $(".navbar-default").css('background-color', 'white');
+            $(".navFont").css('color', 'black');
 
-  <body>
-    
-    <header>
-      <nav class="navbar fixed-top navbar-expand-md navbar-default">
-        <a href="#" class="navbar-brand"><img src="images/index/logo.png"></a>
-       
-        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            $(".dark-blue-text").css('color', 'black');
+            $("a.active").css('color', 'white');
+          } else {
+            $('.navbar-default').css('background-color', 'transparent');
+            $(".navFont").css('color', 'white');
+            $(".dark-blue-text").css('color', 'white');
+          }
+        });
+      }
+    });
+  </script>
+</head>
 
+<body>
+
+  <header>
+    <nav class="navbar fixed-top navbar-expand-md navbar-default">
+      <a href="/index.html" class="navbar-brand"><img src="images/index/logo.png"></a>
+
+      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><i
-        class="fas fa-bars fa-1x dark-blue-text"></i></button>
-  
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
-                <a href="index.html" class="nav-item nav-link navFont">Home</a>
-                <a href="famousplaces.html" class="nav-item active nav-link navFont">Famous Places</a>
-                <a href="restaurants.html" class="nav-item nav-link navFont">Restaurants</a>
-                <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
-                <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
-            </div>
+          class="fas fa-bars fa-1x dark-blue-text"></i></button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
+          <a href="index.html" class="nav-item nav-link navFont">Home</a>
+          <a href="famousplaces.html" class="nav-item active nav-link navFont">Famous Places</a>
+          <a href="restaurants.html" class="nav-item nav-link navFont">Restaurants</a>
+          <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
+          <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
         </div>
-      </nav>
-    
-      <div class="title">
-        <span class="heading">Famous Places</span>
       </div>
+    </nav>
 
-      <div id="cover">
-          <div class="tb">
-            <div class="td"><input class="searchInput"  id="myInput" type="text" placeholder="Search" required></div>
-            <div class="td" id="s-cover">
-              <button id="searchButton" type="submit">
-                <div id="s-circle"></div>
-                <span></span>
-              </button>
-            </div>
-          </div>
-      </div>
-
-    </header>
-
-    <div class="page-wrapper" >
-      <div class="history d-flex justify-content-center">
-        <h1 class="history-heading1 text-center" >Famous Places in Matiari</h1>
-        <hr />
-      </div>
-
-      <div class="container">
-        <div class="row justify-content-center d-flex" id="gallery" ></div>
-      </div>
-      <div id="map" style="width: 100%; height: 530px;"></div>
+    <div class="title">
+      <span class="heading">Famous Places</span>
     </div>
 
-    <footer>
-      <div class="footer">
-        <div class="footer-content">
-          <div class="footer-section about">
-            <h1 class="logo-text">
-              <span class="logo-span">J</span>unaid
-              <span class="logo-span">Q</span>ureshi
-            </h1>
-            <p class="footer-para">
-              I am a creative, Web Developer with command on Latest Tech stacks
-            </p>
-            <div class="contact">
-              <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
-              <span
-                ><i class="fas fa-envelope"></i>&nbsp;
-                qjunaid623@gmail.com</span
-              >
-            </div>
-            <div class="socials">
-              <a
-                href="https://www.facebook.com/profile.php?id=100041078220896"
-                target="_blank"
-                ><i class="fab fa-facebook"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/junaid-qureshi-34a180194/"
-                target="_blank"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a href="https://twitter.com/Junaid084869/" target="_blank"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="https://github.com/qjunaid623/" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          &copy; | Designed By Junaid Qureshi
+    <div id="cover">
+      <div class="tb">
+        <div class="td"><input class="searchInput" id="myInput" type="text" placeholder="Search" required></div>
+        <div class="td" id="s-cover">
+          <button class="searchButton" id="searchButton" type="submit">
+            <div id="s-circle"></div>
+            <span></span>
+          </button>
         </div>
       </div>
-    </footer>
-    
+    </div>
+
+  </header>
+
+  <div class="page-wrapper">
+    <div class="history d-flex justify-content-center">
+      <h1 class="history-heading1 text-center">Famous Places in Matiari</h1>
+      <hr />
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center d-flex" id="gallery"></div>
+    </div>
+    <div id="map" style="width: 100%; height: 530px;"></div>
+  </div>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h1 class="logo-text">
+            <span class="logo-span">J</span>unaid
+            <span class="logo-span">Q</span>ureshi
+          </h1>
+          <p class="footer-para">
+            I am a creative, Web Developer with command on Latest Tech stacks
+          </p>
+          <div class="contact">
+            <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
+            <span><i class="fas fa-envelope"></i>&nbsp;
+              qjunaid623@gmail.com</span>
+          </div>
+          <div class="socials">
+            <a href="https://www.facebook.com/profile.php?id=100041078220896" target="_blank"><i
+                class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/junaid-qureshi-34a180194/" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/Junaid084869/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/qjunaid623/" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; | Designed By Junaid Qureshi
+      </div>
+    </div>
+  </footer>
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-  crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-  crossorigin="anonymous"></script>
-  </body>
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/map.js"></script>
 <script>
   var data = [
     {
-      "image":"images/famousplaces/masjidKirarki.jpg",
+      "image": "images/famousplaces/masjidKirarki.jpg",
       "title": "Kirarki Masjid Matiari",
-      "description":"",
+      "description": "",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/shrineShahAbdulLatif.jpg",
+      "image": "images/famousplaces/shrineShahAbdulLatif.jpg",
       "title": "Shrine of Shah Abdul Latif Bhittai",
-      "description":"",
+      "description": "",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/shrineMakhdoomNooh.jpg",
+      "image": "images/famousplaces/shrineMakhdoomNooh.jpg",
       "title": "Shrine of Makhdoom Nooh",
-      "description":"he was a great saint of his era. His roots connect with Islam",
+      "description": "he was a great saint of his era. His roots connect with Islam",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/masjidMinara.jpg",
+      "image": "images/famousplaces/masjidMinara.jpg",
       "title": "Minara Masjid Matiari",
-      "description":"",
+      "description": "",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/graveyardSirhari.jpg",
+      "image": "images/famousplaces/graveyardSirhari.jpg",
       "title": "Sirhandi Graveyards",
-      "description":"the historic necropolis of Sindh prominent religious family is situated in Matiari town",
+      "description": "the historic necropolis of Sindh prominent religious family is situated in Matiari town",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/shrineJeelani.jpg",
+      "image": "images/famousplaces/shrineJeelani.jpg",
       "title": "Dargah of Jeelani",
-      "description":"in the Peerano Kotar Muhalla of Old Hala is associated with a great historical",
+      "description": "in the Peerano Kotar Muhalla of Old Hala is associated with a great historical",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/templecomplex.jpg",
+      "image": "images/famousplaces/templecomplex.jpg",
       "title": "Odero Lal Temple Complex",
-      "description":"is more than a temple. it is centuries old sanctuary for Hindus and Muslims",
+      "description": "is more than a temple. it is centuries old sanctuary for Hindus and Muslims",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/tombsTalpurs.jpg",
+      "image": "images/famousplaces/tombsTalpurs.jpg",
       "title": "Tombs of Talpurs",
-      "description":"Khudabad, near Hala was once the capital of the Talpurs before they moved to Hyderabad,",
+      "description": "Khudabad, near Hala was once the capital of the Talpurs before they moved to Hyderabad,",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/masjidSaeedabad.jpg",
+      "image": "images/famousplaces/masjidSaeedabad.jpg",
       "title": "Saeedabad Ancient Mosques",
-      "description":"hardly very few architectural monuments of colonial period could have managed their existence",
+      "description": "hardly very few architectural monuments of colonial period could have managed their existence",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/saeedabadprison.jpg",
+      "image": "images/famousplaces/saeedabadprison.jpg",
       "title": "Saeedabad Monument (1928)",
-      "description":"",
+      "description": "",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/pirjhando.jpg",
+      "image": "images/famousplaces/pirjhando.jpg",
       "title": "Pir Jhando villages",
-      "description":"in Saeedabad taluka had been one of the prominent and prestigious centres",
+      "description": "in Saeedabad taluka had been one of the prominent and prestigious centres",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/shrineHashim.jpg",
+      "image": "images/famousplaces/shrineHashim.jpg",
       "title": "Shrine of Sakhi Syed Hashim Shah Badshah",
-      "description":"",
+      "description": "",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/masjidJamia.jpg",
+      "image": "images/famousplaces/masjidJamia.jpg",
       "title": "Jamia Masjid Matiari",
-      "description":"",
+      "description": "",
       "link": "https://youtube.com"
     },
     {
-      "image":"images/famousplaces/shrineRakundin.jpg",
+      "image": "images/famousplaces/shrineRakundin.jpg",
       "title": "Shrine of Sakhi Syed Rakundin Shah Badshah",
-      "description":"",
+      "description": "",
       "link": "https://youtube.com"
     },
   ]
@@ -276,26 +262,26 @@
   $('#gallery').html(cards);
 
 
-  $('#myInput').keyup(function(){
+  $('#myInput').keyup(function () {
     showFilteredCards();
   });
 
-  $(document).ready(function(){
-    $("#searchButton").click(function() {
+  $(document).ready(function () {
+    $("#searchButton").click(function () {
       showFilteredCards();
     });
   });
 
 
-  function showFilteredCards(){
+  function showFilteredCards() {
     var searchField = $('#myInput').val().toLowerCase();
-    if(searchField === '')  {
-      return $('#gallery').html(cards); 
+    if (searchField === '') {
+      return $('#gallery').html(cards);
     }
 
     var regex = new RegExp(searchField, "i");
     var filteredCards = "";
-    $.each(data, function(key, val){
+    $.each(data, function (key, val) {
       if (val.title.toLowerCase().search(regex) != -1) {
         filteredCards += `<div class="card m-3 zoom" style="width: 18rem;">
                   <div class="card-head">
@@ -309,10 +295,10 @@
                 </div>`;
       }
     });
-    
-    if(filteredCards != ""){
+
+    if (filteredCards != "") {
       return $('#gallery').html(filteredCards);
-    }else{
+    } else {
       return $('#gallery').html('<div class="text-danger text-uppercase m-5 font-weight-bold">not found</div>');
     }
   }
