@@ -1,5 +1,23 @@
 var map = null;
 var navigationControl = null;
+
+// $(document).ready(function(){
+// 	$(window).scroll(function () {
+// 			if ($(this).scrollTop() > 50) {
+// 				$('#back-to-top').fadeIn();
+// 			} else {
+// 				$('#back-to-top').fadeOut();
+// 			}
+// 		});
+// 		// scroll body to 0px on click
+// 		$('#back-to-top').click(function () {
+// 			$('body,html').animate({
+// 				scrollTop: 0
+// 			}, 400);
+// 			return false;
+// 		});
+// });
+
 window.onload = function () {
     L.mapquest.key = 'A6qhm4C7QXGtRyV7Q0llfTDEG8LwWdVy';
 
@@ -13,10 +31,11 @@ window.onload = function () {
     navigationControl = L.mapquest.navigationControl();
     map.addControl(navigationControl);
     console.log(navigationControl);
-    L.marker([39.7392, -104.9903], {
-        icon: L.mapquest.icons.marker(),
-        draggable: false
-    }).bindPopup('Matiari').addTo(map);
+    // L.marker([39.7392, -104.9903], {
+    //     icon: L.mapquest.icons.marker(),
+    //     draggable: false
+    // }).bindPopup('Matiari').addTo(map);
+    //dewuife hfeu wfu
 }
 
 function clickLocation(lat, lng) {
@@ -27,3 +46,12 @@ function clickLocation(lat, lng) {
     L.marker([lat, lng], { icon: customIcon }).addTo(map);
 
 }
+
+function backToTop(){
+    window.scroll({
+        top: 100,
+        left: 100,
+        behavior: 'smooth'
+      });
+}
+

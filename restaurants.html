@@ -43,10 +43,11 @@
   <!-- Header and Nav -->
   <header>
     <nav class="navbar fixed-top navbar-expand-md navbar-default">
-      <a href="#" class="navbar-brand"><img src="images/index/logo.png"></a>
+      <a href="/index.html" class="navbar-brand"><img src="images/index/logo.png"></a>
 
       <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars fa-1x dark-blue-text"></i></button>
+        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><i
+          class="fas fa-bars fa-1x dark-blue-text"></i></button>
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
@@ -328,6 +329,9 @@
     <div id="map" style="width: 100%; height: 530px;"></div>
   </div>
   <!-- // Restaurants -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+  </svg></button>
 
   <!-- Footer -->
   <footer>
@@ -362,7 +366,7 @@
     </div>
   </footer>
   <!-- // Footer -->
-
+  <a id="back-to-top" onclick="backToTop();" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -379,7 +383,7 @@
 
 </html>
 
-<script src="js/map.js"></script>
+
 <script>
   var data = [
     {
@@ -629,4 +633,25 @@
   }
 
   $('#gallery').html(cards);
+
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
 </script>
