@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    
   </head>
 
   <body>
@@ -53,7 +54,7 @@
     <div class="page-wrapper">
       <div class="history d-flex justify-content-center">
         <h1 class="history-heading1 text-center">
-          Bus Stops in Matiari (Click to view their locations)</h1>
+          Bus Stops in Matiari</h1>
         <hr />
       </div>
 
@@ -63,6 +64,11 @@
       <div id="map" style="width: 100%; height: 530px;"></div>
     </div>
           
+  
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+    </svg></button>
+  
     <footer>
       <div class="footer">
         <div class="footer-content">
@@ -235,5 +241,67 @@
       });
     }
   });
+
+  $('#myInput').keyup(function () {
+    showFilteredCards();
+  });
+
+  $(document).ready(function () {
+    $("#searchButton").click(function () {
+      showFilteredCards();
+    });
+  });
+
+
+  function showFilteredCards() {
+    var searchField = $('#myInput').val().toLowerCase();
+    if (searchField === '') {
+      return $('#gallery').html(cards);
+    }
+
+    var regex = new RegExp(searchField, "i");
+    var filteredCards = "";
+    $.each(data, function (key, val) {
+      if (val.title.toLowerCase().search(regex) != -1) {
+        filteredCards += `<div class="card m-3 zoom" style="width: 18rem;">
+                  <div class="card-head">
+                    <img src="${data[key].image}" style="height:220px;width:286px"></img>
+                  </div>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${data[key].title}</h5>
+                    <p class="card-text">${data[key].description}</p>
+                    <button id="btnclick" onclick="onClicks(${key});" class="btn btn-checkout mt-auto text-center card-btn">Check Out</button>
+                  </div>
+                </div>`;
+      }
+    });
+
+    if (filteredCards != "") {
+      return $('#gallery').html(filteredCards);
+    } else {
+      return $('#gallery').html('<div class="text-danger text-uppercase m-5 font-weight-bold">not found</div>');
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  var mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
 
 </script>
