@@ -1,453 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
-  <title>Explore Matiari</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Explore Matiari</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+  </head>
 
-  <script>
-    $(document).ready(function () {
-      var scroll_start = 0;
-      var startchange = $('.title');
-      var offset = startchange.offset();
-      if (startchange.length) {
-        $(document).scroll(function () {
-          scroll_start = $(this).scrollTop();
-          if (scroll_start > offset.top) {
-            $(".navbar-default").css('background-color', 'white');
-            $(".navFont").css('color', 'black');
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-md navbar-default">
+        <a href="#" class="navbar-brand"><img src="images/index/logo.png"></a>
 
-            $(".dark-blue-text").css('color', 'black');
-            $("a.active").css('color', 'white');
-          } else {
-            $('.navbar-default').css('background-color', 'transparent');
-            $(".navFont").css('color', 'white');
-            $(".dark-blue-text").css('color', 'white');
-          }
-        });
-      }
-    });
-  </script>
-</head>
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars fa-1x dark-blue-text"></i></button>
 
-<body>
-  <!-- Header and Nav -->
-  <header>
-    <nav class="navbar fixed-top navbar-expand-md navbar-default">
-      <a href="#" class="navbar-brand"><img src="images/index/logo.png"></a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
+            <a href="index.html" class="nav-item nav-link navFont">Home</a>
+            <a href="famousplaces.html" class="nav-item nav-link navFont">Famous Places</a>
+            <a href="restaurants.html" class="nav-item nav-link navFont">Restaurants</a>
+            <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
+            <a href="hospitals.html" class="nav-item active nav-link navFont">Hospitals</a>
+          </div>
+        </div>
+      </nav>
 
-      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars fa-1x dark-blue-text"></i></button>
+      <div class="title">
+        <span class="heading">Hospitals</span>
+      </div>
+    </header>
 
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
-          <a href="index.html" class="nav-item nav-link navFont">Home</a>
-          <a href="famousplaces.html" class="nav-item nav-link navFont">Famous Places</a>
-          <a href="restaurants.html" class="nav-item nav-link navFont">Restaurants</a>
-          <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
-          <a href="hospitals.html" class="nav-item active nav-link navFont">Hospitals</a>
+    <div id="cover">
+      <div class="tb">
+        <div class="td"><input class="searchInput" id="myInput" type="text" placeholder="Search" required></div>
+        <div class="td" id="s-cover">
+          <button class="searchButton" id="searchButton" type="submit">
+            <div id="s-circle"></div>
+            <span></span>
+          </button>
         </div>
       </div>
-    </nav>
-    <!-- // Header and Nav -->
-
-    <!-- Title heading -->
-    <div class="title">
-      <span class="heading">Hospitals</span>
     </div>
-  </header>
 
-  <div id="cover">
-    <div class="tb">
-      <div class="td"><input class="searchInput" id="myInput" type="text" placeholder="Search" required></div>
-      <div class="td" id="s-cover">
-        <button class="searchButton" id="searchButton" type="submit">
-          <div id="s-circle"></div>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- // Title heading -->
-
-  <!-- Restaurants -->
-  <div class="page-wrapper">
-    <main>
-      <div class="history">
-        <h1 class="history-heading1 text-center">
-          Hospitals in Matiari
-        </h1>
-        <hr />
-        <!-- Restaurants list -->
-
-        <!-- <ul class="history-list restaurants">
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:13017627898090499819,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2"
-              target="_blank">
-              MATIARI Research & Training Centre
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:11584879730286075591,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              AL-Shifa Hospital
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:14586030090164551851,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Manzoor soomro Hospital Matiari
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:16855925477911237105,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              THQ Taluka Hospital Matiari
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:15466930272424292041,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Matiari Health services
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:1235443244801099991;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Yaqoob Dental Care Centre
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:4021937329428353572;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              AKUH (Research Center)
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:4808963055411329811;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              DHO Matiari
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:7291013179487624453,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Shaheed Benazir Bhutto Hospital
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:7180256758157527708,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Dr Somoon Clinic
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:10031663155667756216;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              District Of Animal Husbandry & Livestock
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:2158476676005898583,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              DODO Soomro hospital
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:16543734441791975636;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Ali Medical Center & Maternity Home
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:2315810095106863005;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Dua Clinic
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:13411444628279975915,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Zaheer Clinic
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:419893141048686659;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Lucky Clinic
-            </a>
-          </li>
-          <li>
-            <a class="hospitals-link"
-              href="https://www.google.com/search?sxsrf=ALeKk01s0sC5wwmkK73wYRZ82HtJzjvLNQ:1592805327527&ei=j0fwXqLiII3EUuKth7gG&q=hospitals%20in%20matyari&oq=hospitals+in&gs_lcp=CgZwc3ktYWIQAxgAMgQIIxAnMgUIABCRAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBHOggIABCRAhCLAzoFCAAQgwE6BQgAELEDOggIABCxAxCRAjoLCAAQsQMQkQIQiwM6BQgAEIsDOggIABCxAxCLAzoICAAQgwEQiwM6CggAELEDEEMQiwM6BAgAEAo6BwgjELECECc6BAgAEENQ1UJYj2Jg_2toBXADeAGAAa4CiAG9HpIBBjItMTYuMZgBAKABAaoBB2d3cy13aXq4AQI&sclient=psy-ab&npsic=0&rflfq=1&rlha=0&rllag=25599882,68449875,527&tbm=lcl&rldimm=13017627898090499819&lqi=ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp&ved=2ahUKEwjFgvmd3pTqAhUpDWMBHdADAmsQvS4wAHoECAwQHA&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u16!2m2!16m1!1e1!1m4!1u16!2m2!16m1!1e2!2m1!1e16!2m1!1e3!3sIAE,lf:1,lf_ui:2&rlst=f#rlfi=hd:;si:18294050546191957927,l,ChRob3NwaXRhbHMgaW4gbWF0eWFyaVohCglob3NwaXRhbHMiFGhvc3BpdGFscyBpbiBtYXR5YXJp;mv:[[25.6312467,68.48224189999999],[25.425084,68.3765197]]"
-              target="_blank">
-              Gd Soomar Chand
-            </a>
-          </li>
-        </ul> -->
-        <div class="container">
-          <div class="row justify-content-center d-flex" id="gallery" ></div>
-        </div>
-        <div id="map" style="width: 100%; height: 530px;"></div>
-        <!-- // Restaurants list -->
-      </div>
-    </main>
-  </div>
-  <!-- // Restaurants -->
-  <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-  </svg></button>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h1 class="logo-text">
-            <span class="logo-span">J</span>unaid
-            <span class="logo-span">Q</span>ureshi
+    <div class="page-wrapper">
+      <main>
+        <div class="history">
+          <h1 class="history-heading1 text-center">
+            Hospitals in Matiari
           </h1>
-          <p class="footer-para">
-            I am a creative, Web Developer with command on Latest Tech stacks
-          </p>
-          <div class="contact">
-            <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
-            <span><i class="fas fa-envelope"></i>&nbsp;
-              qjunaid623@gmail.com</span>
+          <hr />
+          
+          <div class="container">
+            <div class="row justify-content-center d-flex" id="gallery" ></div>
           </div>
-          <div class="socials">
-            <a href="https://www.facebook.com/profile.php?id=100041078220896" target="_blank"><i
-                class="fab fa-facebook"></i></a>
-            <a href="https://www.linkedin.com/in/junaid-qureshi-34a180194/" target="_blank"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com/Junaid084869/" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://github.com/qjunaid623/" target="_blank"><i class="fab fa-github"></i></a>
+          <div id="map" style="width: 100%; height: 530px;"></div>
+        </div>
+      </main>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+    </svg></button>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h1 class="logo-text">
+              <span class="logo-span">J</span>unaid
+              <span class="logo-span">Q</span>ureshi
+            </h1>
+            <p class="footer-para">
+              I am a creative, Web Developer with command on Latest Tech stacks
+            </p>
+            <div class="contact">
+              <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
+              <span><i class="fas fa-envelope"></i>&nbsp;
+                qjunaid623@gmail.com</span>
+            </div>
+            <div class="socials">
+              <a href="https://www.facebook.com/profile.php?id=100041078220896" target="_blank"><i
+                  class="fab fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/junaid-qureshi-34a180194/" target="_blank"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://twitter.com/Junaid084869/" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://github.com/qjunaid623/" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </div>
+        <div class="footer-bottom">
+          &copy; | Designed By Junaid Qureshi
+        </div>
       </div>
-      <div class="footer-bottom">
-        &copy; | Designed By Junaid Qureshi
-      </div>
-    </div>
-  </footer>
-  <!-- // Footer -->
-
-  
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-  crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-  crossorigin="anonymous"></script>
-  <script src="js/map.js"></script>
-  <script>
-    var data = [
-      {
-        "image": "images/Hospitals/1.jpg",
-        "title": "MATIARI Research & Training Centre",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "25.6310164",
-        "lng": "65.3427327"
-      },
-      {
-        "image": "images/hospitals/2.jpg",
-        "title": "AL-Shifa Hospital",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "25.6296259",
-        "lng": "65.3393829"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "Manzoor soomro Hospital",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "25.6286738",
-        "lng": "65.3399861"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "THQ Taluka Hospital Matiari",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "25.6281293",
-        "lng": "65.3391926"
-      },
-      {
-        "image": "images/hospitals/5.jpg",
-        "title": "Matiari Health services",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "25.6308986",
-        "lng": "65.3444139"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "Yaqoob Dental Care Centre",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "25.629116",
-        "lng": "65.3397847"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "AKUH (Research Center)",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "25.6305224",
-        "lng": "65.3441298"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "DHO Matiari",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "25.628538",
-        "lng": "65.3392187"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "Shaheed Benazir Bhutto Hospital",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "15.628941",
-        "lng": "65.3389131"
-      },
-      {
-        "image": "images/hospitals/6.jpg",
-        "title": "Dr Somoon Clinic",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "15.6282826",
-        "lng": "65.3385148"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "District Of Animal Husbandry & Livestock",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "15.6309995",
-        "lng": "65.3419678"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "DODO Soomro hospital",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "15.6194338",
-        "lng": "65.3552362"
-      },
-      {
-        "image": "images/hospitals/7.jpg",
-        "title": "Ali Medical Center & Maternity Home",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "15.6284029",
-        "lng": "65.3398882"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "Dua Clinic",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "15.6403739",
-        "lng": "65.3370489"
-      },
-      {
-        "image": "images/hospitals/8.jpg",
-        "title": "Zaheer Clinic",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "15.6277501",
-        "lng": "65.339766"
-      },
-      {
-        "image": "images/hospitals/default.png",
-        "title": "Lucky Clinic",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "15.6284675",
-        "lng": "65.3395798"
-      },
-      {
-        "image": "images/hospitals/9.jpg",
-        "title": "Gd Soomar Chand",
-        "description": "",
-        "link": "https://youtube.com",
-        "lat": "15.6120603",
-        "lng": "65.3352808"
-      }
-    ]
-
-    function onClicks(index) {
-      window.scroll({
-        top: 5000,
-        left: 0,
-        behavior: 'smooth'
-      });
-      clickLocation(parseFloat(data[index].lat), parseFloat(data[index].lng));
-    }
-
-    var cards = "";
-    for (var i = 0; i < data.length; i++) {
-      cards += `<div class="card m-3 zoom" style="width: 18rem;">
-                    <div class="card-head">
-                      <img src="${data[i].image}" style="height:220px;width:286px"></img>
-                    </div>
-                    <div class="card-body d-flex flex-column">
-                      <h5 class="card-title">${data[i].title}</h5>
-                      <p class="card-text">${data[i].description}</p>
-                      <button id="btnclick" onclick="onClicks(${i});" class="btn btn-checkout mt-auto text-center card-btn">Check Out</button>
-                    </div>
-                  </div>`;
-    }
-
-    $('#gallery').html(cards);
-
-  </script>
-</body>
-
+    </footer>
+  </body>
 </html>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/map.js"></script>
+
 <script>
+  var data = [
+    {
+      "image": "images/Hospitals/1.jpg",
+      "title": "MATIARI Research & Training Centre",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "25.6310164",
+      "lng": "65.3427327"
+    },
+    {
+      "image": "images/hospitals/2.jpg",
+      "title": "AL-Shifa Hospital",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "25.6296259",
+      "lng": "65.3393829"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "Manzoor soomro Hospital",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "25.6286738",
+      "lng": "65.3399861"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "THQ Taluka Hospital Matiari",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "25.6281293",
+      "lng": "65.3391926"
+    },
+    {
+      "image": "images/hospitals/5.jpg",
+      "title": "Matiari Health services",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "25.6308986",
+      "lng": "65.3444139"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "Yaqoob Dental Care Centre",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "25.629116",
+      "lng": "65.3397847"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "AKUH (Research Center)",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "25.6305224",
+      "lng": "65.3441298"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "DHO Matiari",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "25.628538",
+      "lng": "65.3392187"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "Shaheed Benazir Bhutto Hospital",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "15.628941",
+      "lng": "65.3389131"
+    },
+    {
+      "image": "images/hospitals/6.jpg",
+      "title": "Dr Somoon Clinic",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "15.6282826",
+      "lng": "65.3385148"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "District Of Animal Husbandry & Livestock",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "15.6309995",
+      "lng": "65.3419678"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "DODO Soomro hospital",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "15.6194338",
+      "lng": "65.3552362"
+    },
+    {
+      "image": "images/hospitals/7.jpg",
+      "title": "Ali Medical Center & Maternity Home",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "15.6284029",
+      "lng": "65.3398882"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "Dua Clinic",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "15.6403739",
+      "lng": "65.3370489"
+    },
+    {
+      "image": "images/hospitals/8.jpg",
+      "title": "Zaheer Clinic",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "15.6277501",
+      "lng": "65.339766"
+    },
+    {
+      "image": "images/hospitals/default.png",
+      "title": "Lucky Clinic",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "15.6284675",
+      "lng": "65.3395798"
+    },
+    {
+      "image": "images/hospitals/9.jpg",
+      "title": "Gd Soomar Chand",
+      "description": "",
+      "link": "https://youtube.com",
+      "lat": "15.6120603",
+      "lng": "65.3352808"
+    }
+  ]
+
+  function onClicks(index) {
+    window.scroll({
+      top: 5000,
+      left: 0,
+      behavior: 'smooth'
+    });
+    clickLocation(parseFloat(data[index].lat), parseFloat(data[index].lng));
+  }
+
+  var cards = "";
+  for (var i = 0; i < data.length; i++) {
+    cards += `<div class="card m-3 zoom" style="width: 18rem;">
+                  <div class="card-head">
+                    <img src="${data[i].image}" style="height:220px;width:286px"></img>
+                  </div>
+                  <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${data[i].title}</h5>
+                    <p class="card-text">${data[i].description}</p>
+                    <button id="btnclick" onclick="onClicks(${i});" class="btn btn-checkout mt-auto text-center card-btn">Check Out</button>
+                  </div>
+                </div>`;
+  }
+
+  $('#gallery').html(cards);
+
+  $(document).ready(function () {
+    var scroll_start = 0;
+    var startchange = $('.title');
+    var offset = startchange.offset();
+    if (startchange.length) {
+      $(document).scroll(function () {
+        scroll_start = $(this).scrollTop();
+        if (scroll_start > offset.top) {
+          $(".navbar-default").css('background-color', 'white');
+          $(".navFont").css('color', 'black');
+
+          $(".dark-blue-text").css('color', 'black');
+          $("a.active").css('color', 'white');
+        } else {
+          $('.navbar-default').css('background-color', 'transparent');
+          $(".navFont").css('color', 'white');
+          $(".dark-blue-text").css('color', 'white');
+        }
+      });
+    }
+  });
+
   //Get the button
   var mybutton = document.getElementById("myBtn");
-  
+
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {scrollFunction()};
-  
+
   function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       mybutton.style.display = "block";
@@ -455,6 +310,13 @@
       mybutton.style.display = "none";
     }
   }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
   $('#myInput').keyup(function () {
     showFilteredCards();
   });
@@ -495,11 +357,4 @@
       return $('#gallery').html('<div class="text-danger text-uppercase m-5 font-weight-bold">not found</div>');
     }
   }
-
-  
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-  </script>
+</script>
