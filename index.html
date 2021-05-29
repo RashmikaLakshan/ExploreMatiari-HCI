@@ -1,430 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Explore Matiari</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/language.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
 
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
 
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-md navbar-default">
+        <a href="/index.html" class="navbar-brand">
+          <img src="images/index/logo.png">
+        </a>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
-  <link rel="stylesheet" href="css/language.css" type="text/css">
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><i
+            class="fas fa-bars fa-1x dark-blue-text"></i></button>
 
-  <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
-
-  <script src="js/artyom.window.min.js"></script>
-  <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
-  <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
-  <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
-
-  <title>Explore Matiari</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <script>
-    $(document).ready(function () {
-      var scroll_start = 0;
-      var startchange = $('.title');
-      var offset = startchange.offset();
-      if (startchange.length) {
-        $(document).scroll(function () {
-          scroll_start = $(this).scrollTop();
-          if (scroll_start > offset.top) {
-            $(".navbar-default").css('background-color', 'white');
-            $(".navFont").css('color', 'black');
-
-            $(".dark-blue-text").css('color', 'black');
-            $("a.active").css('color', 'white');
-          } else {
-            $('.navbar-default').css('background-color', 'transparent');
-            $(".navFont").css('color', 'white');
-            $(".dark-blue-text").css('color', 'white');
-          }
-        });
-      }
-    });
-  </script>
-</head>
-
-<body>
-  <!-- Header and Nav -->
-  <header>
-    <nav class="navbar fixed-top navbar-expand-md navbar-default">
-      <a href="/index.html" class="navbar-brand">
-        <img src="images/index/logo.png">
-      </a>
-
-      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><i
-          class="fas fa-bars fa-1x dark-blue-text"></i></button>
-
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
-          <a href="index.html" class="nav-item nav-link active navFont">Home</a>
-          <a href="famousplaces.html" class="nav-item nav-link navFont">Famous Places</a>
-          <a href="restaurants.html" class="nav-item nav-link navFont">Restaurants</a>
-          <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
-          <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ml-auto" style="font-variant: small-caps; ">
+            <a href="index.html" class="nav-item nav-link active navFont">Home</a>
+            <a href="famousplaces.html" class="nav-item nav-link navFont">Famous Places</a>
+            <a href="restaurants.html" class="nav-item nav-link navFont">Restaurants</a>
+            <a href="stops.html" class="nav-item nav-link navFont">Bus Stops</a>
+            <a href="hospitals.html" class="nav-item nav-link navFont">Hospitals</a>
+          </div>
         </div>
+      </nav>
+
+
+      <div class="title">
+        <span class="heading">Welcome To Matiari</span>
       </div>
-    </nav>
+    </header>
 
-
-    <!-- // Header and Nav -->
-    <!-- Title heading -->
-    <div class="title">
-      <span class="heading">Welcome To Matiari</span>
-    </div>
-  </header>
-
-  <div class="container-fluid mt-2">
-
-    <script id="language_script" data-languages="ur,en" data-debug="1" src="language.js"></script>
-
-
-    <language class="languageFrameSelect" data-type="select" aria-label="Click to select Language"
-      data-balloon-pos="down">
-    </language>
-  </div>
-
-  <div class="container-fluid">
-    <div lang="en" class="row mt-3 pl-3">
-      <div class="container-fluid">
-
-        <h1>History of Matiari<i id="i1"
-            onclick="readAloud('i1', 'History of Matiari. Matiari District is a district in the Pakistani province of Sindh. The district was created in 2005 out of Hyderabad District.');"
-            class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
-      </div>
-
-      <div class="container-fluid">
-        <p style="font-family: serifFont; font-size: x-large;">"Matiari District (Sindhi: ضِلعو مٽیاري‎) is a district
-          in the
-          Pakistani province of Sindh. The district was created in 2005
-          out of Hyderabad District."</p>
-      </div>
+    <div class="container-fluid mt-2">
+      <script id="language_script" data-languages="ur,en" data-debug="1" src="language.js"></script>
+      <language class="languageFrameSelect" data-type="select" aria-label="Click to select Language" data-balloon-pos="down"></language>
     </div>
 
-    <div lang="ur" class="row mt-3 pl-3">
-      <div class="container-fluid">
-        <h1>مٹیاری کی تاریخ </h1>
-      </div>
-      <div class="container-fluid">
-        <h5>"مٹیاری ضلع (سندھی: ضِلعو مٽیاري) ایک ضلع ہے
-          پاکستانی صوبہ سندھ۔ ضلع 2005 میں تشکیل دیا گیا تھا
-          ضلع حیدرآباد سے باہر."</h5>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid">
-    <div lang="en" class="row mt-5 pl-3">
-      <div class="container-fluid">
-
-        <h1>Etymology <i id="i2"
-            onclick="readAloud('i2', 'Etymology. The word Matiari is derived from two Sindhi words Mat and yari which means Change friendship. This is not actually we mean it. Actually there is a main Bus Stop At Matiari Main Road, Where a Lady has Sat there Hut a long time ago, Where She Keeps a Mud Pot Of Water ( Called in Sindhi like Mat / Matko / Dilo ) , So People of Matiari naming of their Bus Stop, and Telling to Bus Conductor (Make Stop at Old Women s Hut Where She Keeps Mud Pot of Water { called in sindhi like this [ Mat Wari Maai ] }), By Calling it like this (Mat Wari Maai -- Mat Wari Maai )So many time, That is Why it Became Matiari.');"
-            class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
-      </div>
-
-      <div class="container-fluid">
-        <p style="font-family: serifFont; font-size: x-large;">The word Matiari is derived from two Sindhi words "Mat"
-          and
-          "yari" which means Change friendship. This is not actually we
-          mean it. Actually there is a main Bus Stop At Matiari Main Road,
-          Where a Lady has Sat there Hut a long time ago, Where She Keeps
-          a Mud Pot Of Water ( Called in Sindhi like Mat / Matko / Dilo )
-          , So People of Matiari naming of their Bus Stop, and Telling to
-          Bus Conductor (Make Stop at Old Women's Hut Where She Keeps Mud
-          Pot of Water { called in sindhi like this [ Mat Wari Maai ] }),
-          By Calling it like this (Mat Wari Maai -- Mat Wari Maai )So many
-          time, That is Why it Became Matiari.</p>
-      </div>
-    </div>
-
-    <div lang="ur" class="row mt-5 pl-3">
-      <div class="container-fluid">
-        <h1>شجرہ نسب</h1>
-      </div>
-      <div class="container-fluid">
-        <h5>لفظ مٹیاری دو سندھی الفاظ "چٹائی" اور سے مشتق ہے
-          "یاری" جس کا مطلب ہے دوستی تبدیل کریں۔ یہ حقیقت میں ہم نہیں ہیں
-          اس کا مطلب ہے۔ دراصل مٹیاری مین روڈ پر ایک مرکزی بس اسٹاپ ہے ،
-          جہاں ایک خاتون کے پاس کافی دیر پہلے ہٹ ہے ، جہاں وہ رکھتی ہے
-          پانی کا ایک مٹی والا برتن (جس کو سندھی میں کہا جاتا ہے جیسے چٹائی / مٹکو / دیلو)
-          ، لہذا متیاری کے لوگ اپنے بس اسٹاپ کا نام لے رہے ہیں ، اور بتارہے ہیں
-          بس کنڈکٹر (پرانے خواتین کی جھونپڑی پر رک جاؤ جہاں وہ مٹی رکھتا ہے
-          پانی کا برتن ind جسے اس طرح [میٹ واری مائی] s) سندھی کہا جاتا ہے ،
-          اس کو اس طرح (میٹ واری مائی - میٹ واری مائی) فون کرکے
-          وقت ، یہی وجہ ہے کہ یہ مٹیاری بن گیا۔</h5>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid my-5">
-    <div class="row">
-      <div class="col-lg-3 col-sm-3 col-md-3"></div>
-      <div class="col-lg-6 col-sm-6 col-md-6 text-center">
-        <img class="img-fluid" src="images/index/potlady.jpg">
-      </div>
-      <div class="col-lg-3 col-sm-3 col-md-3"></div>
-    </div>
-  </div>
-
-
-  <div class="container-fluid">
-    <div lang="en" class="row mt-5 pl-3">
-      <div class="container-fluid">
-        <h1>Demography<i id="i3"
-            onclick="readAloud('i3', 'Demography. The total population of district Matiari according to 2017 census was recorded to be 769349. In the 1998 census, Sindhi was the first language of 92% of the population in the talukas of Hala and Matiari, while 3.6% had Urdu.');"
-            class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
-      </div>
-      <div class="container-fluid">
-        <p style="font-family: serifFont; font-size: x-large;">The total population of district Matiari according to
-          2017
-          census was recorded to be 769,349. In the 1998 census, Sindhi
-          was the first language of 92% of the population in the talukas
-          of Hala and Matiari, while 3.6% had Urdu.</p>
-      </div>
-    </div>
-
-    <div lang="ur" class="row mt-5 pl-3">
-      <div class="container-fluid">
-        <h1>ڈیموگرافی</h1>
-      </div>
-      <div class="container-fluid">
-        <h5>2017 کے مطابق ضلع مٹیاری کی کل آبادی
-          مردم شماری 769،349 رہی۔ 1998 کی مردم شماری میں سندھی
-          طلبا میں 92٪ آبادی کی پہلی زبان تھی
-          ہالا اور مٹیاری میں ، جبکہ 3.6 فیصد میں اردو تھی۔</h5>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid my-5">
-    <div class="row">
-      <div class="col-lg-3 col-sm-3 col-md-3"></div>
-      <div class="col-lg-6 col-sm-6 col-md-6">
-        <img class="img-fluid" src="images/index/pop.jpg">
-      </div>
-      <div class="col-lg-3 col-sm-3 col-md-3"></div>
-    </div>
-  </div>
-
-
-
-  <div class="container-fluid">
-    <div lang="en" class="row mt-5 pl-3">
-      <div class="container-fluid">
-        <h1>History and Administration<i id="i4"
-            onclick="readAloud('i4', 'History and Administration. Matiari district was carved out of then Hyderabad district in 2005. Matiari district is part of Hyderabad division. The district is administratively subdivided into three talukas. Hala, Matiari and Saeedabad');"
-            class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
-      </div>
-
-      <div class="container-fluid">
-        <p style="font-family: serifFont; font-size: x-large;">Matiari district was carved out of then Hyderabad
-          district in
-          2005. Matiari district is part of Hyderabad division. The
-          district is administratively subdivided into three talukas.</p>
-        <ul class="history-list">
-          <li> <a href="https://en.wikipedia.org/wiki/Hala_Taluka" target="_blank"> Hala</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Matiari_Taluka" target="_blank"> Matiari</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Saeedabad_Taluka" target="_blank"> Saeedabad</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div lang="ur" class="row mt-5 pl-3">
-      <div class="container-fluid">
-        <h1>تاریخ اور انتظامیہ</h1>
-      </div>
-      <div class="container-fluid">
-        <h5>
-          مٹیاری ضلع اس وقت کے ضلع حیدرآباد سے بنا ہوا تھا
-          2005. مٹیاری ضلع حیدرآباد ڈویژن کا ایک حصہ ہے۔
-          ضلع انتظامی طور پر تین تعلقوں میں تقسیم ہے۔</h5>
-        <ul class="history-list">
-          <li> <a href="https://en.wikipedia.org/wiki/Hala_Taluka" target="_blank"> ہالا</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Matiari_Taluka" target="_blank"> مٹیاری</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Saeedabad_Taluka" target="_blank"> سعید آباد</a></li>
-
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid">
-    <div lang="en" class="row mt-5 pl-3">
-      <div class="container-fluid">
-
-        <h1>Agriculture<i id="i5"
-            onclick="readAloud('i5', 'Agriculture. Matiari district is one of the most fertile districts of Sindh, main crops cultivated here are Cotton, Banana, Mango, wheat, onions and Sugar-cane.');"
-            class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
-      </div>
-
-      <div class="container-fluid">
-        <p style="font-family: serifFont; font-size: x-large;">Matiari district is one of the most fertile districts of
-          Sindh, main crops
-          cultivated here are <strong style="font-family: serifFont; font-size: x-large;">Cotton, Banana, Mango, wheat,
-            onions and Sugar-cane</strong>.</p>
-      </div>
-    </div>
-
-    <div lang="ur" class="row mt-5 pl-3">
-      <div class="container-fluid">
-        <h1>زراعت</h1>
-      </div>
-      <div class="container-fluid">
-        <h5>مٹیاری ضلع ، سندھ کے سب سے زیادہ زرخیز اضلاع میں سے ایک ہے ، اہم فصلیں
-          کاشت یہاں ہیں
-          <strong>کپاس ، کیلا ، آم ، گندم ، پیاز اور گنے کا چھڑی
-          </strong>.
-        </h5>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid my-5">
-    <div class="row">
-      <div class="col-lg-3 col-sm-3 col-md-3">
-        <img class="img-fluid" src="images/index/agri1.jpg" alt="cotton">
-      </div>
-
-
-      <div class="col-lg-3 col-sm-3 col-md-3">
-        <img class="img-fluid" src="images/index/agri2.jpg" alt="sugar cane">
-      </div>
-
-
-      <div class="col-lg-3 col-sm-3 col-md-3">
-        <img class="img-fluid" src="images/index/agri3.jpg" alt="mango">
-      </div>
-
-
-      <div class="col-lg-3 col-sm-3 col-md-3">
-        <img class="img-fluid" src="images/index/agri4.jpg" alt="wheat">
-      </div>
-    </div>
-  </div>
-
-
-  <div class="container-fluid">
-    <div lang="en" class="row mt-5 pl-3">
-      <div class="container-fluid">
-        <h1>Famous Things <i id="i6"
-            onclick="readAloud('i6', 'Famous Things. This district is famous for its Handicrafts mainly Kaashi and Ajrak produced specially in Hala.');"
-            class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
-      </div>
-      <div class="container-fluid">
-        <p style="font-family: serifFont; font-size: x-large;">This district is famous for its Handicrafts mainly
-          <strong style="font-family: serifFont; font-size: x-large;">Kaashi</strong> and
-          <strong style="font-family: serifFont; font-size: x-large;">Ajrak</strong> produced specially in <strong
-            style="font-family: serifFont; font-size: x-large;">Hala</strong>.
-        </p>
-      </div>
-    </div>
-
-    <div lang="ur" class="row mt-5 pl-3">
-      <div class="container-fluid">
-        <h1>مشہور چیزیں</h1>
-      </div>
-      <div class="container-fluid">
-        <h5>یہ ضلع بنیادی طور پر اپنے دستکاریوں کے لئے مشہور ہے
-          <strong>کاشی
-          </strong> اور
-          <strong>اجرک
-          </strong> میں خاص طور پر تیار کیا
-          <strong>ہالا
-          </strong>.
-        </h5>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid my-5">
-    <div class="row">
-      <div class="col-lg-3 col-sm-3 col-md-3">
-        <img class="img-fluid" src="images/halawork.jpg">
-      </div>
-
-
-      <div class="col-lg-3 col-sm-3 col-md-3">
-        <img class="img-fluid" src="images/halawork2.jpg">
-      </div>
-
-
-      <div class="col-lg-3 col-sm-3 col-md-3">
-        <img class="img-fluid" src="images/halawork3.jpg">
-      </div>
-
-
-      <div class="col-lg-3 col-sm-3 col-md-3">
-        <img class="img-fluid" src="images/halawork4.jpg">
-      </div>
-    </div>
-  </div>
-  
-
-  <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-  </svg></button>
-
-  
-
-
-  <!-- // History section -->
-  <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-  </svg></button>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h1 class="logo-text">
-            <span class="logo-span">J</span>unaid
-            <span class="logo-span">Q</span>ureshi
+    <div class="container-fluid">
+      <div lang="en" class="row mt-3 pl-3">
+        <div class="container-fluid">
+          <h1>History of Matiari<i id="i1"
+              onclick="readAloud('i1', 'History of Matiari. Matiari District is a district in the Pakistani province of Sindh. The district was created in 2005 out of Hyderabad District.');"
+              class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i>
           </h1>
-          <p class="footer-para">
-            I am a creative, Web Developer with command on Latest Tech stacks
-          </p>
-          <div class="contact">
-            <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
-            <span><i class="fas fa-envelope"></i>&nbsp;
-              qjunaid623@gmail.com</span>
-          </div>
-          <div class="socials">
-            <a href="https://www.facebook.com/profile.php?id=100041078220896" target="_blank"><i
-                class="fab fa-facebook"></i></a>
-            <a href="https://www.linkedin.com/in/junaid-qureshi-34a180194/" target="_blank"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com/Junaid084869/" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://github.com/qjunaid623/" target="_blank"><i class="fab fa-github"></i></a>
-          </div>
+        </div>
+
+        <div class="container-fluid">
+          <p style="font-family: serifFont; font-size: x-large;">"Matiari District (Sindhi: ضِلعو مٽیاري‎) is a district
+            in the
+            Pakistani province of Sindh. The district was created in 2005
+            out of Hyderabad District."</p>
         </div>
       </div>
-      <div class="footer-bottom">
-        &copy; | Designed By Junaid Qureshi
+
+      <div lang="ur" class="row mt-3 pl-3">
+        <div class="container-fluid">
+          <h1>مٹیاری کی تاریخ </h1>
+        </div>
+        <div class="container-fluid">
+          <h5>"مٹیاری ضلع (سندھی: ضِلعو مٽیاري) ایک ضلع ہے
+            پاکستانی صوبہ سندھ۔ ضلع 2005 میں تشکیل دیا گیا تھا
+            ضلع حیدرآباد سے باہر."</h5>
+        </div>
       </div>
     </div>
-  </footer>
-  <!-- // Footer -->
-  <a id="back-to-top" onclick="backToTop();" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script src="js/speech.js"></script>
-</body>
 
+    <div class="container-fluid">
+      <div lang="en" class="row mt-5 pl-3">
+        <div class="container-fluid">
+          <h1>Etymology <i id="i2"
+              onclick="readAloud('i2', 'Etymology. The word Matiari is derived from two Sindhi words Mat and yari which means Change friendship. This is not actually we mean it. Actually there is a main Bus Stop At Matiari Main Road, Where a Lady has Sat there Hut a long time ago, Where She Keeps a Mud Pot Of Water ( Called in Sindhi like Mat / Matko / Dilo ) , So People of Matiari naming of their Bus Stop, and Telling to Bus Conductor (Make Stop at Old Women s Hut Where She Keeps Mud Pot of Water { called in sindhi like this [ Mat Wari Maai ] }), By Calling it like this (Mat Wari Maai -- Mat Wari Maai )So many time, That is Why it Became Matiari.');"
+              class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i>
+          </h1>
+        </div>
+
+        <div class="container-fluid">
+          <p style="font-family: serifFont; font-size: x-large;">The word Matiari is derived from two Sindhi words "Mat"
+            and
+            "yari" which means Change friendship. This is not actually we
+            mean it. Actually there is a main Bus Stop At Matiari Main Road,
+            Where a Lady has Sat there Hut a long time ago, Where She Keeps
+            a Mud Pot Of Water ( Called in Sindhi like Mat / Matko / Dilo )
+            , So People of Matiari naming of their Bus Stop, and Telling to
+            Bus Conductor (Make Stop at Old Women's Hut Where She Keeps Mud
+            Pot of Water { called in sindhi like this [ Mat Wari Maai ] }),
+            By Calling it like this (Mat Wari Maai -- Mat Wari Maai )So many
+            time, That is Why it Became Matiari.</p>
+        </div>
+      </div>
+
+      <div lang="ur" class="row mt-5 pl-3">
+        <div class="container-fluid">
+          <h1>شجرہ نسب</h1>
+        </div>
+        <div class="container-fluid">
+          <h5>لفظ مٹیاری دو سندھی الفاظ "چٹائی" اور سے مشتق ہے
+            "یاری" جس کا مطلب ہے دوستی تبدیل کریں۔ یہ حقیقت میں ہم نہیں ہیں
+            اس کا مطلب ہے۔ دراصل مٹیاری مین روڈ پر ایک مرکزی بس اسٹاپ ہے ،
+            جہاں ایک خاتون کے پاس کافی دیر پہلے ہٹ ہے ، جہاں وہ رکھتی ہے
+            پانی کا ایک مٹی والا برتن (جس کو سندھی میں کہا جاتا ہے جیسے چٹائی / مٹکو / دیلو)
+            ، لہذا متیاری کے لوگ اپنے بس اسٹاپ کا نام لے رہے ہیں ، اور بتارہے ہیں
+            بس کنڈکٹر (پرانے خواتین کی جھونپڑی پر رک جاؤ جہاں وہ مٹی رکھتا ہے
+            پانی کا برتن ind جسے اس طرح [میٹ واری مائی] s) سندھی کہا جاتا ہے ،
+            اس کو اس طرح (میٹ واری مائی - میٹ واری مائی) فون کرکے
+            وقت ، یہی وجہ ہے کہ یہ مٹیاری بن گیا۔</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid my-5">
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3"></div>
+        <div class="col-lg-6 col-sm-6 col-md-6 text-center">
+          <img class="img-fluid" src="images/index/potlady.jpg">
+        </div>
+        <div class="col-lg-3 col-sm-3 col-md-3"></div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div lang="en" class="row mt-5 pl-3">
+        <div class="container-fluid">
+          <h1>Demography<i id="i3"
+              onclick="readAloud('i3', 'Demography. The total population of district Matiari according to 2017 census was recorded to be 769349. In the 1998 census, Sindhi was the first language of 92% of the population in the talukas of Hala and Matiari, while 3.6% had Urdu.');"
+              class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
+        </div>
+        <div class="container-fluid">
+          <p style="font-family: serifFont; font-size: x-large;">The total population of district Matiari according to
+            2017
+            census was recorded to be 769,349. In the 1998 census, Sindhi
+            was the first language of 92% of the population in the talukas
+            of Hala and Matiari, while 3.6% had Urdu.</p>
+        </div>
+      </div>
+
+      <div lang="ur" class="row mt-5 pl-3">
+        <div class="container-fluid">
+          <h1>ڈیموگرافی</h1>
+        </div>
+        <div class="container-fluid">
+          <h5>2017 کے مطابق ضلع مٹیاری کی کل آبادی
+            مردم شماری 769،349 رہی۔ 1998 کی مردم شماری میں سندھی
+            طلبا میں 92٪ آبادی کی پہلی زبان تھی
+            ہالا اور مٹیاری میں ، جبکہ 3.6 فیصد میں اردو تھی۔</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid my-5">
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3"></div>
+        <div class="col-lg-6 col-sm-6 col-md-6">
+          <img class="img-fluid" src="images/index/pop.jpg">
+        </div>
+        <div class="col-lg-3 col-sm-3 col-md-3"></div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div lang="en" class="row mt-5 pl-3">
+        <div class="container-fluid">
+          <h1>History and Administration<i id="i4"
+              onclick="readAloud('i4', 'History and Administration. Matiari district was carved out of then Hyderabad district in 2005. Matiari district is part of Hyderabad division. The district is administratively subdivided into three talukas. Hala, Matiari and Saeedabad');"
+              class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
+        </div>
+
+        <div class="container-fluid">
+          <p style="font-family: serifFont; font-size: x-large;">Matiari district was carved out of then Hyderabad
+            district in
+            2005. Matiari district is part of Hyderabad division. The
+            district is administratively subdivided into three talukas.</p>
+          <ul class="history-list">
+            <li> <a href="https://en.wikipedia.org/wiki/Hala_Taluka" target="_blank"> Hala</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Matiari_Taluka" target="_blank"> Matiari</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Saeedabad_Taluka" target="_blank"> Saeedabad</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div lang="ur" class="row mt-5 pl-3">
+        <div class="container-fluid">
+          <h1>تاریخ اور انتظامیہ</h1>
+        </div>
+        <div class="container-fluid">
+          <h5>
+            مٹیاری ضلع اس وقت کے ضلع حیدرآباد سے بنا ہوا تھا
+            2005. مٹیاری ضلع حیدرآباد ڈویژن کا ایک حصہ ہے۔
+            ضلع انتظامی طور پر تین تعلقوں میں تقسیم ہے۔</h5>
+          <ul class="history-list">
+            <li> <a href="https://en.wikipedia.org/wiki/Hala_Taluka" target="_blank"> ہالا</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Matiari_Taluka" target="_blank"> مٹیاری</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Saeedabad_Taluka" target="_blank"> سعید آباد</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div lang="en" class="row mt-5 pl-3">
+        <div class="container-fluid">
+
+          <h1>Agriculture<i id="i5"
+              onclick="readAloud('i5', 'Agriculture. Matiari district is one of the most fertile districts of Sindh, main crops cultivated here are Cotton, Banana, Mango, wheat, onions and Sugar-cane.');"
+              class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
+        </div>
+
+        <div class="container-fluid">
+          <p style="font-family: serifFont; font-size: x-large;">Matiari district is one of the most fertile districts of
+            Sindh, main crops
+            cultivated here are <strong style="font-family: serifFont; font-size: x-large;">Cotton, Banana, Mango, wheat,
+              onions and Sugar-cane</strong>.</p>
+        </div>
+      </div>
+
+      <div lang="ur" class="row mt-5 pl-3">
+        <div class="container-fluid">
+          <h1>زراعت</h1>
+        </div>
+        <div class="container-fluid">
+          <h5>مٹیاری ضلع ، سندھ کے سب سے زیادہ زرخیز اضلاع میں سے ایک ہے ، اہم فصلیں
+            کاشت یہاں ہیں
+            <strong>کپاس ، کیلا ، آم ، گندم ، پیاز اور گنے کا چھڑی
+            </strong>.
+          </h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid my-5">
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3">
+          <img class="img-fluid" src="images/index/agri1.jpg" alt="cotton">
+        </div>
+
+
+        <div class="col-lg-3 col-sm-3 col-md-3">
+          <img class="img-fluid" src="images/index/agri2.jpg" alt="sugar cane">
+        </div>
+
+
+        <div class="col-lg-3 col-sm-3 col-md-3">
+          <img class="img-fluid" src="images/index/agri3.jpg" alt="mango">
+        </div>
+
+
+        <div class="col-lg-3 col-sm-3 col-md-3">
+          <img class="img-fluid" src="images/index/agri4.jpg" alt="wheat">
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div lang="en" class="row mt-5 pl-3">
+        <div class="container-fluid">
+          <h1>Famous Things <i id="i6"
+              onclick="readAloud('i6', 'Famous Things. This district is famous for its Handicrafts mainly Kaashi and Ajrak produced specially in Hala.');"
+              class="fas fa-volume-up pl-2 icon-color" title="Read Aloud"></i></h1>
+        </div>
+        <div class="container-fluid">
+          <p style="font-family: serifFont; font-size: x-large;">This district is famous for its Handicrafts mainly
+            <strong style="font-family: serifFont; font-size: x-large;">Kaashi</strong> and
+            <strong style="font-family: serifFont; font-size: x-large;">Ajrak</strong> produced specially in <strong
+              style="font-family: serifFont; font-size: x-large;">Hala</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div lang="ur" class="row mt-5 pl-3">
+        <div class="container-fluid">
+          <h1>مشہور چیزیں</h1>
+        </div>
+        <div class="container-fluid">
+          <h5>یہ ضلع بنیادی طور پر اپنے دستکاریوں کے لئے مشہور ہے
+            <strong>کاشی
+            </strong> اور
+            <strong>اجرک
+            </strong> میں خاص طور پر تیار کیا
+            <strong>ہالا
+            </strong>.
+          </h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid my-5">
+      <div class="row">
+        <div class="col-lg-3 col-sm-3 col-md-3">
+          <img class="img-fluid" src="images/halawork.jpg">
+        </div>
+
+
+        <div class="col-lg-3 col-sm-3 col-md-3">
+          <img class="img-fluid" src="images/halawork2.jpg">
+        </div>
+
+
+        <div class="col-lg-3 col-sm-3 col-md-3">
+          <img class="img-fluid" src="images/halawork3.jpg">
+        </div>
+
+
+        <div class="col-lg-3 col-sm-3 col-md-3">
+          <img class="img-fluid" src="images/halawork4.jpg">
+        </div>
+      </div>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+    </svg></button>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+    </svg></button>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h1 class="logo-text">
+              <span class="logo-span">J</span>unaid
+              <span class="logo-span">Q</span>ureshi
+            </h1>
+            <p class="footer-para">
+              I am a creative, Web Developer with command on Latest Tech stacks
+            </p>
+            <div class="contact">
+              <span><i class="fas fa-phone"></i>&nbsp; +9231-33084869</span>
+              <span><i class="fas fa-envelope"></i>&nbsp;
+                qjunaid623@gmail.com</span>
+            </div>
+            <div class="socials">
+              <a href="https://www.facebook.com/profile.php?id=100041078220896" target="_blank"><i
+                  class="fab fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/junaid-qureshi-34a180194/" target="_blank"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://twitter.com/Junaid084869/" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://github.com/qjunaid623/" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; | Designed By Junaid Qureshi
+        </div>
+      </div>
+    </footer>
+
+    <a id="back-to-top" onclick="backToTop();" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+  </body>
 </html>
+
+<script src="js/artyom.window.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/speech.js"></script>
 
 <script>
   //Get the button
@@ -446,4 +393,27 @@
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
+
+  $(document).ready(function () {
+    var scroll_start = 0;
+    var startchange = $('.title');
+    var offset = startchange.offset();
+    if (startchange.length) {
+      $(document).scroll(function () {
+        scroll_start = $(this).scrollTop();
+        if (scroll_start > offset.top) {
+          $(".navbar-default").css('background-color', 'white');
+          $(".navFont").css('color', 'black');
+
+          $(".dark-blue-text").css('color', 'black');
+          $("a.active").css('color', 'white');
+        } else {
+          $('.navbar-default').css('background-color', 'transparent');
+          $(".navFont").css('color', 'white');
+          $(".dark-blue-text").css('color', 'white');
+        }
+      });
+    }
+  });
+  
   </script>
